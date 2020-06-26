@@ -1,21 +1,25 @@
 <template>
   <div id="app">
-    <start-page/>
+    <start-page v-if="this.gameActive == false"/>
+    <end-page/>
   </div>
 </template>
 
 <script>
 import StartPage from './components/StartPage.vue'
 import {eventBus} from './main.js'
+import EndPage from './components/EndPage.vue'
 export default {
   name: 'app',
   components: {
-    'start-page': StartPage
+    'start-page': StartPage,
+    'end-page': EndPage
   },
   data() {
     return {
       gameActive: false,
-      user: []
+      user: [],
+      questionCounter: 0
     }
   },
   mounted(){
