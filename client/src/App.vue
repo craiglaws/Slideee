@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <start-page v-if="this.gameActive == false"/>
-    <end-page/>
+    <end-page :user="user"/>
   </div>
 </template>
 
@@ -18,13 +18,13 @@ export default {
   data() {
     return {
       gameActive: false,
-      user: [],
+      user: null,
       questionCounter: 0
     }
   },
   mounted(){
     eventBus.$on('start-quiz', (res) => {
-      this.user.push(res);
+      this.user = res;
       this.gameActive = true
     })
   }
