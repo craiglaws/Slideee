@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <start-page v-if="this.gameActive == false"/>
-    <end-page :user="user"/>
+    <start-page v-if="this.gameActive === false"/>
+    <end-page v-if="this.gameActive === true" :user="user"/>
   </div>
 </template>
 

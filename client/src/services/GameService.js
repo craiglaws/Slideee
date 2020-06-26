@@ -12,6 +12,11 @@ export default {
     .then(res => res.json());
   },
 
+  getTopThree(){
+    return fetch(usersURL + 'top3')
+    .then(res => res.json());
+  },
+
   postUser(payload) {
     return fetch(usersURL, {
       method: 'POST',
