@@ -12,6 +12,7 @@
 
 <script>
 import GameService from '../services/GameService.js'
+import {eventBus} from '../main.js'
 export default {
   name: 'start-page',
   data() {
@@ -21,7 +22,12 @@ export default {
   },
   methods: {
     startQuiz(){
-      GameService.
+      const newUser = {
+        name: this.username,
+        score: 0
+      }
+      GameService.postUser(newUser)
+      .then(res => eventBus.$emit('start-quiz', res))
     }
   }
 }
