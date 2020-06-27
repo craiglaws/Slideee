@@ -17,6 +17,8 @@ MongoClient.connect('mongodb://localhost:27017')
     app.use('/api/animals', createRouter(animalsCollection));
     const usersCollection = db.collection('users');
     app.use('/api/users', createRouter(usersCollection));
+    const questionsCollection = db.collection('questions');
+    app.use('/api/questions', createRouter(questionsCollection));
   })
   .catch(console.error);
 

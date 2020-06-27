@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <start-page v-if="this.gameActive === false"/>
-    <end-page v-if="this.gameActive === true" :user="user"/>
+    <questions-page v-if="this.gameActive === true"/>
+    <end-page v-if="this.questionCounter === 10" :user="user"/>
   </div>
 </template>
 
@@ -9,11 +10,14 @@
 import StartPage from './components/StartPage.vue'
 import {eventBus} from './main.js'
 import EndPage from './components/EndPage.vue'
+import QuestionsPage from './components/QuestionsPage.vue'
+
 export default {
   name: 'app',
   components: {
     'start-page': StartPage,
-    'end-page': EndPage
+    'end-page': EndPage,
+    'questions-page': QuestionsPage
   },
   data() {
     return {

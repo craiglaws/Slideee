@@ -390,3 +390,28 @@ db.users.insertMany([
     "score": 7
   }
 ]);
+
+db.questions.insertMany([
+
+    {
+        "question": "What is the speed of a ",
+        "value": "speed"
+    },
+    {
+        "question": "What is the weight of a ",
+        "value": "weight"
+    },
+    {
+        "question": "What is the height of a ",
+        "value": "size"
+    },
+    {
+        "question": "What is the total population of the ",
+        "value": "population"
+    },
+    {
+        "question": "What is the lifespan of a ",
+        "value": "lifespan"
+    }
+
+])
