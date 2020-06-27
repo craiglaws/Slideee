@@ -99,7 +99,7 @@ db.animals.insertMany([
     "weight": 7,
     "size": 360,
     "population": 20100,
-    "lifespan":
+    "lifespan": 60
   },
 
   {
@@ -108,7 +108,7 @@ db.animals.insertMany([
     "weight": 60,
     "size": 150,
     "population": 300000,
-    "lifespan": 60
+    "lifespan": 15
   },
 
   {
@@ -307,7 +307,7 @@ db.animals.insertMany([
     "size": 910,
     "population": 40000,
     "lifespan": 10
-  }
+  },
 
   {
     "name": "Jaguar",
