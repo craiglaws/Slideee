@@ -159,7 +159,8 @@ db.animals.insertMany([
     "weight": 32,
     "size": 56,
     "population": 4000,
-    "lifespan": 21
+    "lifespan": 21,
+    "photo": "../client/src/assets/animal_pictures/snow_leopard.jpg"
   },
 
   {
@@ -168,7 +169,8 @@ db.animals.insertMany([
     "weight": 6,
     "size": 400,
     "population": 500000,
-    "lifespan": 20
+    "lifespan": 20,
+    "photo": "../client/src/assets/animal_pictures/king_cobra.jpg"
   },
 
   {
@@ -177,7 +179,8 @@ db.animals.insertMany([
     "weight": 47,
     "size": 150,
     "population": 8542148,
-    "lifespan": 22
+    "lifespan": 22,
+    "photo": "../client/src/assets/animal_pictures/red_kangaroo.jpg"
   },
 
   {
@@ -186,7 +189,8 @@ db.animals.insertMany([
     "weight": 85,
     "size": 15,
     "population": 100000,
-    "lifespan": 18
+    "lifespan": 18,
+    "photo": "../client/src/assets/animal_pictures/koala.jpeg"
   },
 
   {
@@ -195,7 +199,8 @@ db.animals.insertMany([
     "weight": 91,
     "size": 313,
     "population": 6000,
-    "lifespan": 30
+    "lifespan": 30,
+    "photo": "../client/src/assets/animal_pictures/komodo_dragon.jpg"
   },
 
   {
@@ -204,7 +209,8 @@ db.animals.insertMany([
     "weight": 1000,
     "size": 520,
     "population": 200000,
-    "lifespan": 70
+    "lifespan": 70,
+    "photo": "../client/src/assets/animal_pictures/saltwater_crocodile.jpg"
   },
 
   {
@@ -213,7 +219,8 @@ db.animals.insertMany([
     "weight": 8,
     "size": 65,
     "population": 20000,
-    "lifespan": 6
+    "lifespan": 6,
+    "photo": "../client/src/assets/animal_pictures/tasmanian_devil.jpg"
   },
 
   {
@@ -222,7 +229,8 @@ db.animals.insertMany([
     "weight": 2,
     "size": 60,
     "population": 50000,
-    "lifespan": 17
+    "lifespan": 17,
+    "photo": "../client/src/assets/animal_pictures/platypus.jpg"
   },
 
   {
@@ -231,7 +239,8 @@ db.animals.insertMany([
     "weight": 25,
     "size": 75,
     "population": 10000,
-    "lifespan": 13
+    "lifespan": 13,
+    "photo": "../client/src/assets/animal_pictures/eurasian_lynx.jpeg"
   },
 
   {
@@ -240,7 +249,8 @@ db.animals.insertMany([
     "weight": 180,
     "size": 150,
     "population": 2100000,
-    "lifespan": 15
+    "lifespan": 15,
+    "photo": "../client/src/assets/animal_pictures/reindeer.jpg"
   },
 
   {
@@ -249,7 +259,8 @@ db.animals.insertMany([
     "weight": 990,
     "size": 180,
     "population": 530000,
-    "lifespan": 20
+    "lifespan": 20,
+    "photo": "../client/src/assets/animal_pictures/american_bison.jpeg"
   },
 
   {
@@ -258,7 +269,8 @@ db.animals.insertMany([
     "weight": 200,
     "size": 200,
     "population": 55000,
-    "lifespan": 25
+    "lifespan": 25,
+    "photo": "../client/src/assets/animal_pictures/grizzly_bear.jpg"
   },
 
   {
@@ -267,7 +279,8 @@ db.animals.insertMany([
     "weight": 80,
     "size": 81,
     "population": 300000,
-    "lifespan": 8
+    "lifespan": 8,
+    "photo": "../client/src/assets/animal_pictures/grey_wolf.jpg"
   },
 
   {
@@ -276,7 +289,8 @@ db.animals.insertMany([
     "weight": 700,
     "size": 210,
     "population": 1000000,
-    "lifespan": 25
+    "lifespan": 25,
+    "photo": "../client/src/assets/animal_pictures/moose.jpg"
   },
 
   {
@@ -285,7 +299,8 @@ db.animals.insertMany([
     "weight": 450,
     "size": 350,
     "population": 13000,
-    "lifespan": 60
+    "lifespan": 60,
+    "photo": "../client/src/assets/animal_pictures/florida_manatee.jpg"
   },
 
   {
@@ -294,7 +309,8 @@ db.animals.insertMany([
     "weight": 450,
     "size": 160,
     "population": 25000,
-    "lifespan": 25
+    "lifespan": 25,
+    "photo": "../client/src/assets/animal_pictures/polar_bear.jpg"
   },
 
   {
@@ -303,7 +319,8 @@ db.animals.insertMany([
     "weight": 84,
     "size": 99,
     "population": 7000000,
-    "lifespan": 25
+    "lifespan": 25,
+    "photo": "../client/src/assets/animal_pictures/llama.jpg"
   },
 
   {
@@ -312,7 +329,8 @@ db.animals.insertMany([
     "weight": 3,
     "size": 53,
     "population": 100,
-    "lifespan": 20
+    "lifespan": 20,
+    "photo": "../client/src/assets/animal_pictures/pygmy_sloth.jpg"
   },
 
   {
@@ -321,7 +339,8 @@ db.animals.insertMany([
     "weight": 250,
     "size": 910,
     "population": 40000,
-    "lifespan": 10
+    "lifespan": 10,
+    "photo": "../client/src/assets/animal_pictures/anaconda.jpg"
   },
 
   {
@@ -330,7 +349,8 @@ db.animals.insertMany([
     "weight": 96,
     "size": 76,
     "population": 64000,
-    "lifespan": 15
+    "lifespan": 15,
+    "photo": "../client/src/assets/animal_pictures/jaguar.jpg"
   },
 
   {
@@ -339,7 +359,8 @@ db.animals.insertMany([
     "weight": 66,
     "size": 64,
     "population": 5000000,
-    "lifespan": 10
+    "lifespan": 10,
+    "photo": "../client/src/assets/animal_pictures/capybara.jpg"
   },
 
   {
@@ -348,7 +369,8 @@ db.animals.insertMany([
     "weight": 3,
     "size": 10,
     "population": 30000,
-    "lifespan": 6
+    "lifespan": 6,
+    "photo": "../client/src/assets/animal_pictures/wild_haggis.jpg"
   },
 
   {
@@ -357,7 +379,8 @@ db.animals.insertMany([
     "weight": 12,
     "size": 30,
     "population": 562000,
-    "lifespan": 15
+    "lifespan": 15,
+    "photo": "../client/src/assets/animal_pictures/badger.jpeg"
   },
 
   {
@@ -366,7 +389,8 @@ db.animals.insertMany([
     "weight": 8,
     "size": 72,
     "population": 225000,
-    "lifespan": 9
+    "lifespan": 9,
+    "photo": "../client/src/assets/animal_pictures/red_fox.jpeg"
   },
 
   {
@@ -375,7 +399,8 @@ db.animals.insertMany([
     "weight": 120,
     "size": 280,
     "population": 150000,
-    "lifespan": 75
+    "lifespan": 75,
+    "photo": "../client/src/assets/animal_pictures/ostrich.jpg"
   },
 
   {
@@ -384,7 +409,8 @@ db.animals.insertMany([
     "weight": 227,
     "size": 91,
     "population": 1000,
-    "lifespan": 100
+    "lifespan": 100,
+    "photo": "../client/src/assets/animal_pictures/galapagos_tortoise.jpeg"
   }
 ]);
 
