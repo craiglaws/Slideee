@@ -34,7 +34,7 @@ export default {
       .then(res => this.topThree = res)
     },
     playAgain(){
-      
+
     }
   },
   data(){

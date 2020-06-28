@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <start-page v-if="this.gameActive === false"/>
-    <questions-page v-if="this.gameActive === true"/>
+    <questions-page v-if="this.gameActive === true" :user="user"/>
     <end-page v-if="this.questionCounter === 10" :user="user"/>
   </div>
 </template>
@@ -30,6 +30,12 @@ export default {
     eventBus.$on('start-quiz', (res) => {
       this.user = res;
       this.gameActive = true
+    })
+    eventBus.$on('right-answer', (val) => {
+      this.user.score += val
+    })
+    eventBus.$on('add-to-counter', (val) => {
+      this.questionCounter += val
     })
   }
 }

@@ -2,8 +2,10 @@
 
   <div class="">
     <!-- current player + score -->
-    <div class="">
 
+    <div class="">
+      <p>{{user.name}}{{user.score}}</p>
+    </div>
 
       <div v-if="toggleAnswer == false">
         {{ getNewQuestion() }}
@@ -11,12 +13,10 @@
         <questions-display v-if="selectedAnimal && selectedQuestion" :selectedAnimal="selectedAnimal" :selectedQuestion="selectedQuestion" />
       </div>
 
-    </div>
     <div v-if="toggleAnswer">
       <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }}</h3>
-
+        <p>{{checkAnswer()}}</p>
       <p> The correct answer was {{correctAnswer}}, you guessed {{guessAnswer}} </p>
-      <!-- <p>{{pointAwarded}}</p> -->
       <button name="button" v-on:click="nextQuestion">Next Question</button>
     </div>
   </div>
@@ -43,6 +43,8 @@ export default {
       toggleAnswer: false
     }
   },
+  props: ['user'],
+  
   mounted(){
     GameService.getAnimals()
     .then(res => this.animals = res)
@@ -71,6 +73,19 @@ export default {
     },
     nextQuestion(){
       this.toggleAnswer = false
+    },
+    checkAnswer(){
+      let statement = ""
+      if(this.guessAnswer == this.correctAnswer){
+        eventBus.$emit('right-answer', 1)
+        statement = "Well done you got it right"
+      }
+      else{
+        statement = "Unlucky!"
+      }
+
+      eventBus.$emit('add-to-counter', 1)
+      return statement
     }
   },
 

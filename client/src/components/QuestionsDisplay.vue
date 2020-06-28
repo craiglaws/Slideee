@@ -5,8 +5,9 @@
 
     <!-- <h1>{{ correctAnswer }}</h1> -->
 
-  <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }}</h3>
 
+  <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }}</h3>
+  <p>{{this.guessAnswer}}</p>
 
     <div class="slidecontainer">
       <label>0</label>
@@ -14,7 +15,7 @@
       <label>{{getMaxValue()}}</label>
     </div>
     <div class="submit-answer">
-      <button v-on:click="checkAnswer">Submit Answer</button>
+      <button v-on:click.once="checkAnswer">Submit Answer</button>
     </div>
 
   </div>
@@ -41,7 +42,8 @@ export default {
       this.correctAnswer = this.selectedAnimal[this.selectedQuestion.value]
     },
     getMaxValue(){
-      let max_value = (this.correctAnswer * (1.3 + (Math.random() * 0.3)))
+      // let max_value = (this.correctAnswer * (1.3 + (Math.random() * 0.3)))
+      let max_value = this.correctAnswer
       if (max_value < 100) {
         max_value = Math.ceil(max_value/100)*100;
 
