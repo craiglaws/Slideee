@@ -3,8 +3,8 @@
   <div class="">
     <!-- current player + score -->
 
-    <div class="">
-      <p>{{user.name}}{{user.score}}</p>
+    <div id="current_score"> <img src="@/assets/current_score.png" alt="">
+      <p>{{user.name}} <br> {{user.score}} pts</p>
     </div>
 
       <div v-if="toggleAnswer == false">
@@ -44,7 +44,7 @@ export default {
     }
   },
   props: ['user'],
-  
+
   mounted(){
     GameService.getAnimals()
     .then(res => this.animals = res)
@@ -98,4 +98,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#current_score {
+  background-image: url(../);
+}
 </style>

@@ -435,24 +435,29 @@ db.users.insertMany([
 db.questions.insertMany([
 
     {
-        "question": "What is the speed of a ",
-        "value": "speed"
+        "question": "What is the maximum speed of the ",
+        "value": "speed",
+        "unit": ", to the nearest mph?"
     },
     {
-        "question": "What is the weight of a ",
-        "value": "weight"
+        "question": "What is the maximum weight of the ",
+        "value": "weight",
+        "unit": " in kilograms?"
     },
     {
-        "question": "What is the height of a ",
-        "value": "size"
+        "question": "What is the height of the ",
+        "value": "size",
+        "unit": " in meters?"
     },
     {
         "question": "What is the total population of the ",
-        "value": "population"
+        "value": "population",
+        "unit": " in the world?"
     },
     {
-        "question": "What is the lifespan of a ",
-        "value": "lifespan"
+        "question": "What is the average lifespan of the ",
+        "value": "lifespan",
+        "unit": "?"
     }
 
 ])
