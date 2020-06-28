@@ -6,7 +6,7 @@
     <!-- <h1>{{ correctAnswer }}</h1> -->
 
 
-  <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }}</h3>
+  <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.unit}}</h3>
   <p>{{this.guessAnswer}}</p>
 
     <div class="slidecontainer">
