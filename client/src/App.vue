@@ -37,4 +37,15 @@ export default {
 
 <style>
 
+    html {
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
 </style>
