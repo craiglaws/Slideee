@@ -124,7 +124,6 @@ export default {
   -webkit-text-stroke: 5px white;
 }
 
-<<<<<<< HEAD
     #catchphrase {
         z-index: 100;
         top: 45vh;
@@ -132,20 +131,8 @@ export default {
     }
 
 
-    #startForm{
-        position: relative;
-        top: 50vh;
-        padding: 5vw;
-        height: 30vh;
-        width: 100vw;
-        color: white;
-        font-family: 'Poppins', sans-serif;
-        border: none;
-        background-color: none;
-        text-align: center;
-        display: block;
-    }
-=======
+
+
 #startForm{
   position: relative;
   top: 50vh;
@@ -159,7 +146,6 @@ export default {
   text-align: center;
   display: block;
 }
->>>>>>> feature/addSounds
 
 .userEnter {
   font-size: 2vw;

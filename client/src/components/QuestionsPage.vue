@@ -1,9 +1,9 @@
 <template lang="html">
 
   <div id="questionsPage">
-    <div id="animalPhoto">
+    <!-- <div id="animalPhoto">
     <img :src="selectedAnimal.photo"/>
-    </div>
+    </div> -->
 
 
     <div id="userScore">

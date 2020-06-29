@@ -3,7 +3,7 @@
     <div>
         {{ findCorrectAnswer() }}
 
-    <div>
+    <div class="pulse">
         <h1><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">No bonus points</span></h1>
     </div>
 
@@ -14,8 +14,8 @@
         <p>{{this.guessAnswer}}</p>
     </div>
     <div class="slidecontainer">
-      <label>0</label>
-      <input type="range" min="0" :max="getMaxValue()" :step="(getMaxValue()/20)" class="slider" v-model="guessAnswer" value="1" required>
+      <label>0</label><br>
+      <input type="range" min="0" :max="getMaxValue()" :step="(getMaxValue()/20)" class="slider" v-model="guessAnswer" value="1" required><br>
       <label>{{getMaxValue()}}</label>
     </div>
     <div class="submit-answer">
@@ -240,5 +240,33 @@ top:1px;
   border-radius: 50%;
   background: #73f53f;
   cursor: pointer;
+}
+.pulse {
+	background: red;
+	border-radius: 50%;
+	margin: 10px;
+	height: 20px;
+	width: 20px;
+
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
 }
 </style>
