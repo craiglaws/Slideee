@@ -68,11 +68,26 @@ export default {
         checkAnswer(){
 
             let statement = ""
+
             if(this.guessAnswer == this.correctAnswer){
-                eventBus.$emit('right-answer', 1)
-                statement = `Well done you got it right! The answer was ${this.correctAnswer}.`
-            }
-            else{
+                eventBus.$emit('right-answer', 10)
+                statement = `Well done you got it right! The answer was ${this.correctAnswer}. +10`
+            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
+                eventBus.$emit('right-answer', 9)
+                statement = `You were 10% off! The answer was ${this.correctAnswer}. +9`
+            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
+                eventBus.$emit('right-answer', 8)
+                statement = `You were 20% off! The answer was ${this.correctAnswer}. +8`
+            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
+                eventBus.$emit('right-answer', 7)
+                statement = `You were 30% off! The answer was ${this.correctAnswer}. +7`
+            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.6)) && ((this.guessAnswer) <= (this.correctAnswer * 1.4))){
+                eventBus.$emit('right-answer', 6)
+                statement = `You were 40% off! The answer was ${this.correctAnswer}. +6`
+            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.5)) && ((this.guessAnswer) <= (this.correctAnswer * 1.5))){
+                eventBus.$emit('right-answer', 5)
+                statement = `You were 50% off! The answer was ${this.correctAnswer}. +5`
+            } else{
                 statement = `Unlucky! The correct answer was ${this.correctAnswer}, you guessed ${this.guessAnswer}.`
             }
 
