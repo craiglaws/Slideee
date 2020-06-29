@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <div class="">
+  <div id="questionsPage">
     <!-- current player + score -->
 
     <div id="current_score">
@@ -84,7 +84,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
-#current_score {
-  /* background-image: url(../); */
+#questionsPage{
+    background-image: url('../assets/questionFrameTransparent.png');
+    background-size: cover;
+    background-repeat: none;
+    height: 100vh;
 }
 </style>
