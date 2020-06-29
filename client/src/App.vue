@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <start-page v-if="this.gameActive === false"/>
-    <questions-page v-if="this.gameActive === true" :user="user"/>
+    <questions-page v-if="(this.gameActive === true) && (this.questionCounter < 10)" :user="user" :animals="animals" :questions="questions"/>
     <end-page v-if="this.questionCounter === 10" :user="user"/>
   </div>
 </template>
 
 <script>
+import GameService from './services/GameService.js'
 import StartPage from './components/StartPage.vue'
 import {eventBus} from './main.js'
 import EndPage from './components/EndPage.vue'
@@ -23,10 +24,18 @@ export default {
     return {
       gameActive: false,
       user: null,
-      questionCounter: 0
+      questionCounter: 0,
+      animals: null,
+      questions: null
     }
   },
   mounted(){
+    GameService.getAnimals()
+    .then(res => this.animals = res)
+
+    GameService.getQuestions()
+    .then(res => this.questions = res)
+
     eventBus.$on('start-quiz', (res) => {
       this.user = res;
       this.gameActive = true
