@@ -7,7 +7,7 @@
         <h1><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">No bonus points</span></h1>
     </div>
 
-    <div id="questionContainer" :img="selectedAnimal.photo">
+    <div id="questionContainer">
       <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.unit}}</h3>
     </div>
     <div class="">
@@ -128,24 +128,30 @@ export default {
 
             if(this.guessAnswer == this.correctAnswer){
                 eventBus.$emit('right-answer', (10 + bonus))
-                statement = `Well done you got it right! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${10 + bonus}!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
-                eventBus.$emit('right-answer', (9 + bonus))
-                statement = `You were 10% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
+                statement = `FANTASTIC! You got it right! The answer was ${this.correctAnswer}. Your speedy response gained you ${bonus} points. +${10 + bonus} points!`
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
                 eventBus.$emit('right-answer', (8 + bonus))
-                statement = `You were 20% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${8 + bonus}!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
-                eventBus.$emit('right-answer', (7 + bonus))
-                statement = `You were 30% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.6)) && ((this.guessAnswer) <= (this.correctAnswer * 1.4))){
-                eventBus.$emit('right-answer', (6 + bonus))
-                statement = `You were 40% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.5)) && ((this.guessAnswer) <= (this.correctAnswer * 1.5))){
+                statement = `So close... You were 10% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${8 + bonus} points!`
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
                 eventBus.$emit('right-answer', (5 + bonus))
-                statement = `You were 50% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
-            } else{
-                statement = `Unlucky! The correct answer was ${this.correctAnswer}, you guessed ${this.guessAnswer}.`
+                statement = `You were 20% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${5 + bonus} points!`
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
+                eventBus.$emit('right-answer', (2 + bonus))
+                statement = `You were 30% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${2 + bonus}!`
+            }
+            // else if (((this.guessAnswer) >= (this.correctAnswer * 0.6)) && ((this.guessAnswer) <= (this.correctAnswer * 1.4))){
+            //     eventBus.$emit('right-answer', (6 + bonus))
+            //     statement = `You were 40% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
+            // }
+            // else if (((this.guessAnswer) >= (this.correctAnswer * 0.5)) && ((this.guessAnswer) <= (this.correctAnswer * 1.5))){
+            //     eventBus.$emit('right-answer', (5 + bonus))
+            //     statement = `You were 50% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
+            // }
+            else{
+                statement = `Unlucky! You guessed ${this.guessAnswer}, the correct answer was ${this.correctAnswer}.`
             }
 
             eventBus.$emit('add-to-counter', 1)
@@ -161,10 +167,12 @@ export default {
 
 <style lang="css" scoped>
 #questionContainer{
-  top: 50vh;
+  display: flex;
+  align-self: center;
+  /* top: 50vh;
   padding: 5vw;
   height: 30vh;
-  width: 100vw;
+  width: 100vw; */
   color: black;
   font-family: 'Poppins', sans-serif;
   width: 20%;

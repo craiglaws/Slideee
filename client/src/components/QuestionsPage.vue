@@ -1,7 +1,10 @@
 <template lang="html">
 
-  <div id="questionsPage" :img="selectedAnimal.photo">
-    <!-- current player + score -->
+  <div id="questionsPage">
+    <div id="animalPhoto">
+    <img :src="selectedAnimal.photo"/>
+    </div>
+
 
     <div id="userScore">
       <img src="../assets/userScore.png" class="rotate linear infinite" width="400" height="400"/>
@@ -9,8 +12,6 @@
     </div>
 
     <div v-if="selectedAnimal && selectedQuestion">
-      <!-- {{ getNewQuestion() }}
-      {{ getNewAnimal() }} -->
       <questions-display v-if="toggleAnswer == false" :selectedAnimal="selectedAnimal" :selectedQuestion="selectedQuestion" />
     </div>
 
@@ -18,6 +19,7 @@
       <div id="questionContainer">
         <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{ selectedQuestion.unit}}</h3>
         <p>{{ this.statement }}</p>
+
       </div>
 
       <div >
