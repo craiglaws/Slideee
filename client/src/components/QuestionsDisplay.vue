@@ -103,7 +103,7 @@ export default {
     },
 
     checkAnswer(){
-
+      this.playSound()
       let statement = ""
 
       if(this.guessAnswer == this.correctAnswer){
