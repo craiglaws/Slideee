@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <start-page v-if="this.gameActive === false"/>
-    <questions-page v-if="(this.gameActive === true) && (this.questionCounter < 2)" :user="user" :animals="animals" :questions="questions"/>
-    <end-page v-if="this.questionCounter === 2" :user="user"/>
+    <questions-page v-if="(this.gameActive === true) && (this.questionCounter < 10)" :user="user" :animals="animals" :questions="questions"/>
+    <end-page v-if="this.questionCounter === 10" :user="user"/>
   </div>
 </template>
 
