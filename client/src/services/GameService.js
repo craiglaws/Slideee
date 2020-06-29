@@ -31,5 +31,19 @@ export default {
             headers: { 'Content-Type': 'application/json'}
         })
         .then(res => res.json())
+    },
+
+    sendScore(user) {
+      let parsedObj = JSON.parse(JSON.stringify(user))
+      console.log(parsedObj);
+
+      return fetch(usersURL + parsedObj._id, {
+        method: 'PUT',
+        body: JSON.stringify({"score": parsedObj.score}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json())
     }
 }
