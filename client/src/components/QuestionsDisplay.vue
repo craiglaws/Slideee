@@ -103,7 +103,6 @@ export default {
     },
 
     checkAnswer(){
-      this.playSound()
       let statement = ""
 
       if(this.guessAnswer == this.correctAnswer){
@@ -132,8 +131,8 @@ export default {
 
 
       eventBus.$emit('display-answer', statement)
-    }
-  }
+    },
+
 }
 
 
