@@ -108,7 +108,7 @@ db.animals.insertMany([
     "speed": 67,
     "weight": 7,
     "size": 360,
-    "population": 20100,
+    "population": 20000,
     "lifespan": 60,
     "photo": "../../client/src/assets/animal_pictures/wandering_albatross.jpg"
   },
