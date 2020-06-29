@@ -388,7 +388,7 @@ db.animals.insertMany([
     "speed": 30,
     "weight": 8,
     "size": 70,
-    "population": 220000,
+    "population": 250000,
     "lifespan": 9,
     "photo": "../../client/src/assets/animal_pictures/red_fox.jpeg"
   },
