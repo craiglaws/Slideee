@@ -14,7 +14,7 @@
       </div>
 
     <div v-if="toggleAnswer">
-      <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }}</h3>
+      <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{ selectedQuestion.unit}}</h3>
         <p>{{ this.statement }}</p>
       <button name="button" v-on:click="nextQuestion">Next Question</button>
     </div>
