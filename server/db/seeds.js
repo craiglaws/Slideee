@@ -7,8 +7,8 @@ db.animals.insertMany([
     "name": "African Elephant",
     "speed": 25,
     "weight": 6000,
-    "size": 320,
-    "population": 415000,
+    "size": 325,
+    "population": 420000,
     "lifespan": 70,
     "photo": "../../client/src/assets/animal_pictures/african_elephant.jpg"
   },
@@ -18,18 +18,18 @@ db.animals.insertMany([
     "speed": 80,
     "weight": 65,
     "size": 90,
-    "population": 7100,
+    "population": 7000,
     "lifespan": 15,
     "photo": "../../client/src/assets/animal_pictures/cheetah.jpg"
   },
 
   {
     "name": "Giraffe",
-    "speed": 37,
+    "speed": 35,
     "weight": 800,
-    "size": 610,
+    "size": 600,
     "population": 97500,
-    "lifespan": 26,
+    "lifespan": 25,
     "photo": "../../client/src/assets/animal_pictures/giraffe.jpg"
   },
 
@@ -45,7 +45,7 @@ db.animals.insertMany([
 
   {
     "name": "White Rhinoceros",
-    "speed": 31,
+    "speed": 30,
     "weight": 2300,
     "size": 190,
     "population": 18000,
@@ -55,8 +55,8 @@ db.animals.insertMany([
 
   {
     "name": "Leopard",
-    "speed": 36,
-    "weight": 31,
+    "speed": 35,
+    "weight": 30,
     "size": 70,
     "population": 700000,
     "lifespan": 17,
@@ -68,7 +68,7 @@ db.animals.insertMany([
     "speed": 25,
     "weight": 150,
     "size": 180,
-    "population": 1063,
+    "population": 1000,
     "lifespan": 35,
     "photo": "../../client/src/assets/animal_pictures/mountain_gorilla.jpeg"
   },
@@ -86,7 +86,7 @@ db.animals.insertMany([
   {
     "name": "Emperor Penguin",
     "speed": 5,
-    "weight": 23,
+    "weight": 22.5,
     "size": 130,
     "population": 250000,
     "lifespan": 20,
@@ -95,19 +95,19 @@ db.animals.insertMany([
 
   {
     "name": "Walrus",
-    "speed": 21,
+    "speed": 20,
     "weight": 1000,
-    "size": 240,
-    "population": 129000,
+    "size": 250,
+    "population": 130000,
     "lifespan": 40,
     "photo": "../../client/src/assets/animal_pictures/walrus.jpg"
   },
 
   {
     "name": "Wandering Albatross",
-    "speed": 67,
+    "speed": 65,
     "weight": 7,
-    "size": 360,
+    "size": 350,
     "population": 20000,
     "lifespan": 60,
     "photo": "../../client/src/assets/animal_pictures/wandering_albatross.jpg"
@@ -128,7 +128,7 @@ db.animals.insertMany([
     "speed": 20,
     "weight": 100,
     "size": 90,
-    "population": 1864,
+    "population": 1800,
     "lifespan": 20,
     "photo": "../../client/src/assets/animal_pictures/giant_panda.jpg"
   },
@@ -136,7 +136,7 @@ db.animals.insertMany([
   {
     "name": "Bengal Tiger",
     "speed": 40,
-    "weight": 220,
+    "weight": 225,
     "size": 110,
     "population": 2500,
     "lifespan": 10,
@@ -148,7 +148,7 @@ db.animals.insertMany([
     "speed": 3,
     "weight": 75,
     "size": 140,
-    "population": 104700,
+    "population": 105000,
     "lifespan": 45,
     "photo": "../../client/src/assets/animal_pictures/orangutan.jpeg"
   },
@@ -156,10 +156,10 @@ db.animals.insertMany([
   {
     "name": "Snow Leopard",
     "speed": 40,
-    "weight": 32,
-    "size": 56,
+    "weight": 32.5,
+    "size": 55,
     "population": 4000,
-    "lifespan": 21,
+    "lifespan": 20,
     "photo": "../../client/src/assets/animal_pictures/snow_leopard.jpg"
   },
 
@@ -176,9 +176,9 @@ db.animals.insertMany([
   {
     "name": "Red Kangaroo",
     "speed": 35,
-    "weight": 47,
+    "weight": 47.5,
     "size": 150,
-    "population": 8542148,
+    "population": 8500000,
     "lifespan": 22,
     "photo": "../../client/src/assets/animal_pictures/red_kangaroo.jpg"
   },
@@ -196,8 +196,8 @@ db.animals.insertMany([
   {
     "name": "Komodo Dragon",
     "speed": 12,
-    "weight": 91,
-    "size": 313,
+    "weight": 90,
+    "size": 300,
     "population": 6000,
     "lifespan": 30,
     "photo": "../../client/src/assets/animal_pictures/komodo_dragon.jpg"
@@ -207,7 +207,7 @@ db.animals.insertMany([
     "name": "Saltwater Crocodile",
     "speed": 18,
     "weight": 1000,
-    "size": 520,
+    "size": 525,
     "population": 200000,
     "lifespan": 70,
     "photo": "../../client/src/assets/animal_pictures/saltwater_crocodile.jpg"
@@ -225,7 +225,7 @@ db.animals.insertMany([
 
   {
     "name": "Platypus",
-    "speed": 22,
+    "speed": 20,
     "weight": 2,
     "size": 60,
     "population": 50000,
@@ -275,9 +275,9 @@ db.animals.insertMany([
 
   {
     "name": "Grey Wolf",
-    "speed": 37,
+    "speed": 37.5,
     "weight": 80,
-    "size": 81,
+    "size": 80,
     "population": 300000,
     "lifespan": 8,
     "photo": "../../client/src/assets/animal_pictures/grey_wolf.jpg"
@@ -287,7 +287,7 @@ db.animals.insertMany([
     "name": "Moose",
     "speed": 35,
     "weight": 700,
-    "size": 210,
+    "size": 200,
     "population": 1000000,
     "lifespan": 25,
     "photo": "../../client/src/assets/animal_pictures/moose.jpg"
@@ -316,8 +316,8 @@ db.animals.insertMany([
   {
     "name": "Llama",
     "speed": 35,
-    "weight": 84,
-    "size": 99,
+    "weight": 85,
+    "size": 100,
     "population": 7000000,
     "lifespan": 25,
     "photo": "../../client/src/assets/animal_pictures/llama.jpg"
@@ -327,7 +327,7 @@ db.animals.insertMany([
     "name": "Pygmy Sloth",
     "speed": 1,
     "weight": 3,
-    "size": 53,
+    "size": 50,
     "population": 100,
     "lifespan": 20,
     "photo": "../../client/src/assets/animal_pictures/pygmy_sloth.jpg"
@@ -337,7 +337,7 @@ db.animals.insertMany([
     "name": "Anaconda",
     "speed": 10,
     "weight": 250,
-    "size": 910,
+    "size": 900,
     "population": 40000,
     "lifespan": 10,
     "photo": "../../client/src/assets/animal_pictures/anaconda.jpg"
@@ -345,19 +345,19 @@ db.animals.insertMany([
 
   {
     "name": "Jaguar",
-    "speed": 49,
-    "weight": 96,
-    "size": 76,
-    "population": 64000,
+    "speed": 50,
+    "weight": 95,
+    "size": 75,
+    "population": 65000,
     "lifespan": 15,
     "photo": "../../client/src/assets/animal_pictures/jaguar.jpg"
   },
 
   {
     "name": "Capybara",
-    "speed": 22,
-    "weight": 66,
-    "size": 64,
+    "speed": 22.5,
+    "weight": 65,
+    "size": 65,
     "population": 5000000,
     "lifespan": 10,
     "photo": "../../client/src/assets/animal_pictures/capybara.jpg"
@@ -365,7 +365,7 @@ db.animals.insertMany([
 
   {
     "name": "Wild Haggis",
-    "speed": 88,
+    "speed": 90,
     "weight": 3,
     "size": 10,
     "population": 30000,
@@ -378,7 +378,7 @@ db.animals.insertMany([
     "speed": 19,
     "weight": 12,
     "size": 30,
-    "population": 562000,
+    "population": 560000,
     "lifespan": 15,
     "photo": "../../client/src/assets/animal_pictures/badger.jpeg"
   },
@@ -387,8 +387,8 @@ db.animals.insertMany([
     "name": "Red Fox",
     "speed": 30,
     "weight": 8,
-    "size": 72,
-    "population": 225000,
+    "size": 70,
+    "population": 220000,
     "lifespan": 9,
     "photo": "../../client/src/assets/animal_pictures/red_fox.jpeg"
   },
@@ -397,7 +397,7 @@ db.animals.insertMany([
     "name": "Ostrich",
     "speed": 70,
     "weight": 120,
-    "size": 280,
+    "size": 275,
     "population": 150000,
     "lifespan": 75,
     "photo": "../../client/src/assets/animal_pictures/ostrich.jpg"
@@ -406,11 +406,21 @@ db.animals.insertMany([
   {
     "name": "Galapagos Tortoise",
     "speed": 1,
-    "weight": 227,
-    "size": 91,
+    "weight": 225,
+    "size": 90,
     "population": 1000,
     "lifespan": 100,
     "photo": "../../client/src/assets/animal_pictures/galapagos_tortoise.jpeg"
+  },
+
+  {
+    "name": "Godzilla",
+    "speed": 50,
+    "weight": 90000000,
+    "size": 11000,
+    "population": 1,
+    "lifespan": 5000,
+    "photo": "../../client/src/assets/animal_pictures/godzilla.png"
   }
 ]);
 
@@ -418,17 +428,17 @@ db.animals.insertMany([
 db.users.insertMany([
   {
     "name": "Sam",
-    "score": 8
+    "score": 77
   },
 
   {
     "name": "Donald",
-    "score": 10
+    "score": 72
   },
 
   {
     "name": "Craig",
-    "score": 7
+    "score": 69
   }
 ]);
 
@@ -437,22 +447,22 @@ db.questions.insertMany([
     {
         "question": "What is the maximum speed of the ",
         "value": "speed",
-        "unit": ", to the nearest mph?"
+        "unit": "to the nearest mph?"
     },
     {
         "question": "What is the maximum weight of the ",
         "value": "weight",
-        "unit": " in kilograms?"
+        "unit": "in kilograms?"
     },
     {
         "question": "What is the height of the ",
         "value": "size",
-        "unit": " in meters?"
+        "unit": "in centimeters?"
     },
     {
         "question": "What is the total population of the ",
         "value": "population",
-        "unit": " in the world?"
+        "unit": "in the world?"
     },
     {
         "question": "What is the average lifespan of the ",
