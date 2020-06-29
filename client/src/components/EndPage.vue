@@ -9,7 +9,7 @@
           <th>SCORE</th>
         </tr>
       </thead>
-      <tbody>{{getLeaderboard()}}
+      <tbody>
         <tr v-for="(player, index) in this.topThree" :key="index">
           <td>{{player.name}}</td>
           <td>{{player.score}}</td>
@@ -25,16 +25,23 @@
 
 <script>
 import GameService from '../services/GameService.js'
+import {eventBus} from '../main.js'
 export default {
   name: 'end-page',
   props: ["user"],
+  mounted(){
+    console.log(this.user);
+    GameService.sendScore(this.user)
+
+    this.getLeaderboard()
+  },
   methods: {
     getLeaderboard(){
       GameService.getTopThree()
       .then(res => this.topThree = res)
     },
     playAgain(){
-
+        eventBus.$emit('new-game')
     }
   },
   data(){
