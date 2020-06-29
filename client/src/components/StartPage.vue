@@ -1,42 +1,52 @@
 <template lang="html">
-  <div id="startPage">
+    <div id="startPage">
 
-    <div id="topBar">
-         <p id="topBarText"> Get learning - AnimalQuiz &trade; </p>
-    </div>
-
-    <h1 id="mainHeader">
-        <span class="red">A</span>
-        <span class="green">n</span>
-        <span class="blue">i</span>
-        <span class="yellow">m</span>
-        <span class="red">a</span>
-        <span class="green">l </span>
-        <span class="blue">Q</span>
-        <span class="yellow">u</span>
-        <span class="red">i</span>
-        <span class="green">z</span>
-    </h1>
-
-    <form v-on:submit.prevent="startQuiz">
-        <div id="startForm">
-            <label class="padding userEnter" id="username" for="username">Enter your name</label>
-            <br>
-            <div id="userAndGo">
-                <input id="textEnter" class="padding" type="text" name="username" v-model="username">
-                <br>
-                <input id="startQuiz" class="padding" type="submit" name="submit" value=">>">
-            </div>
+        <div id="topBar">
+            <p id="topBarText"> Get learning - AnimalQuiz &trade; </p>
         </div>
-    </form>
 
-    <img class="sparkle sparkle1" src="../assets/sparkle.png" alt="">
-    <img class="sparkle sparkle2" src="../assets/sparkle.png" alt="">
-    <img class="sparkle sparkle3" src="../assets/sparkle.png" alt="">
-    <img class="sparkle sparkle4" src="../assets/sparkle.png" alt="">
+        <h1 id="mainHeader">
+            <span class="red">A</span>
+            <span class="green">n</span>
+            <span class="blue">i</span>
+            <span class="yellow">m</span>
+            <span class="red">a</span>
+            <span class="green">l </span>
+            <span class="blue">Q</span>
+            <span class="yellow">u</span>
+            <span class="red">i</span>
+            <span class="green">z</span>
+        </h1>
+
+        <div class="Iam">
+            <b>
+            <h2 class="innerIam"><span class="shadowed">Improve your speed </span> <br />
+                        <span class="blue shadowed">Expand your knowledge</span> <br />
+                        <span class="yellow shadowed">Compete for a high score!</span> <br />
+                        <span class="green shadowed">Have fun!</span>
+            </h2>
+            </b>
+        </div>
+
+            <form v-on:submit.prevent="startQuiz">
+                <div id="startForm">
+                    <label class="padding userEnter" id="username" for="username">Enter your name</label>
+                    <br>
+                    <div id="userAndGo">
+                        <input id="textEnter" class="padding" type="text" name="username" v-model="username">
+                        <br>
+                        <input id="startQuiz" class="padding" type="submit" name="submit" value=">>">
+                    </div>
+                </div>
+            </form>
+
+            <img class="sparkle sparkle1" src="../assets/sparkle.png" alt="">
+            <img class="sparkle sparkle2" src="../assets/sparkle.png" alt="">
+            <img class="sparkle sparkle3" src="../assets/sparkle.png" alt="">
+            <img class="sparkle sparkle4" src="../assets/sparkle.png" alt="">
 
 
-  </div>
+        </div>
 
 </template>
 
@@ -105,6 +115,13 @@ export default {
         /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
         -webkit-text-stroke: 5px white;
     }
+
+    #catchphrase {
+        z-index: 100;
+        top: 45vh;
+        position: fixed;
+    }
+
 
     #startForm{
         position: relative;
@@ -225,6 +242,95 @@ export default {
         to {
             opacity: 0;
         }
+    }
+
+    .shadowed {
+        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+    }
+
+    .Iam {
+        top: 45vh;
+        text-align: center;
+        position: fixed;
+        padding: 2em 5em;
+        font: normal 2vh Montserrat, sans-serif;
+        color: #999;
+    }
+    .Iam p {
+        float: left;
+        margin-right: 0.3em;
+    }
+    .Iam b {
+        float: left;
+        overflow: hidden;
+        position: relative;
+        height: 3vh;
+        /* HEIGHT OF SHOWING AREA */
+        line-height: 4vh;
+    }
+    .Iam .innerIam {
+        display: inline-block;
+        color: #e74c3c;
+        position: relative;
+        white-space: nowrap;
+        top: 0;
+        left: 0;
+
+
+        /*animation*/
+        -webkit-animation:move 10s;
+        -moz-animation:move 10s;
+        -ms-animation:move 10s;
+        -o-animation:move 10s;
+        animation:move 10s;
+        /*animation-iteration-count*/
+        -webkit-animation-iteration-count:infinite;
+        -moz-animation-iteration-count:infinite;
+        -ms-animation-iteration-count:infinite;
+        -o-animation-iteration-count:infinite;
+        animation-iteration-count:infinite;
+        /*animation-delay*/
+        -webkit-animation-delay:1s;
+        -moz-animation-delay:1s;
+        -ms-animation-delay:1s;
+        -o-animation-delay:1s;
+        animation-delay:1s;
+    }
+    @keyframes move{
+        0%  { top: 0px; }
+        20% { top: -3.7vh; }
+        40% { top: -7.2vh; }
+        60% { top: -10.9vh; }
+        80% { top: -14.6vh; }
+    }
+
+    @-webkit-keyframes move {
+        0%  { top: 0px; }
+        20% { top: -3.7vh; }
+        40% { top: -7.2vh; }
+        60% { top: -10.9vh; }
+        80% { top: -14.6vh; }
+    }
+    @-moz-keyframes move {
+        0%  { top: 0px; }
+        20% { top: -50px; }
+        40% { top: -100px; }
+        60% { top: -150px; }
+        80% { top: -200px; }
+    }
+    @-o-keyframes move {
+        0%  { top: 0px; }
+        20% { top: -50px; }
+        40% { top: -100px; }
+        60% { top: -150px; }
+        80% { top: -200px; }
+    }
+    @keyframes move {
+        0%  { top: 0px; }
+        20% { top: -3.7vh; }
+        40% { top: -7.2vh; }
+        60% { top: -10.9vh; }
+        80% { top: -14.6vh; }
     }
 
 </style>
