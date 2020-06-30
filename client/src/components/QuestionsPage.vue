@@ -2,7 +2,7 @@
 
   <div id="questionsPage">
     <div v-if="selectedAnimal">
-      <img :src="selectedAnimal.photo" alt="PIC">
+      <img :src="selectedAnimal.photo" alt="PIC" id="animalPicture">
     </div>
 
     <!-- current player + score -->
@@ -23,7 +23,7 @@
 
       </div>
 
-      <div >
+      <div id="next">
         <button class="button" name="button" v-on:click="nextQuestion">Next Question</button>
       </div>
     </div>
@@ -103,6 +103,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+#animalPicture{
+  position: fixed;
+  z-index: -1000;
+  height: 100vh;
+  width: 100vw;
+}
 #questionsPage{
   background-image: url('../assets/questionFrameTransparent.png');
   background-size: cover;
@@ -110,9 +116,17 @@ export default {
   height: 100vh;
 }
 #userScore{
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  position: fixed;
+  top: -20vh;
+  right: -20vh;
+}
+#userScore p{
+  position: fixed;
+  top: 6vh;
+  right: 5vh;
+
+
+  z-index: 2000;
 }
 .rotate {
   animation: rotation 10s}
@@ -135,15 +149,17 @@ export default {
     }
   }
   #questionContainer{
-    top: 50vh;
-    padding: 5vw;
+    position: fixed;
+    top: 10vh;
+    left: 10vw;
     height: 30vh;
-    width: 100vw;
+    width: 40vw;
     color: black;
     font-family: 'Poppins', sans-serif;
-    width: 20%;
+
+
     background: rgba(255, 255, 255, 0.5);
-    margin-bottom: 20px;
+
     padding: 25px;
     border-radius: 10px;
     border-style: ridge;
@@ -170,6 +186,11 @@ export default {
   .button:active {
     position:relative;
     top:1px;
+  }
+  #next{
+    position: fixed;
+    bottom: 15vh;
+    left: 45vw;
   }
 
 
