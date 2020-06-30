@@ -3,7 +3,7 @@
     <div>
         <div id="bigContainer">
             <div id="questionContainer">
-                <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.unit}}</h3>
+                <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.end}}</h3>
                 <p class="pulse"><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">X</span></p>
             </div>
         </div>
