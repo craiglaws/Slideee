@@ -159,7 +159,6 @@ export default {
   text-align: center;
   display: block;
 }
->>>>>>> feature/addSounds
 
 .userEnter {
   font-size: 2vw;

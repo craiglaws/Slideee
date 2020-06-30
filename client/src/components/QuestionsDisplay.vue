@@ -7,7 +7,7 @@
         <h1><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">No bonus points</span></h1>
     </div>
 
-    <div id="questionContainer" :img="selectedAnimal.photo">
+    <div id="questionContainer">
       <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.unit}}</h3>
     </div>
     <div class="">
@@ -129,21 +129,23 @@ export default {
             if(this.guessAnswer == this.correctAnswer){
                 eventBus.$emit('right-answer', (10 + bonus))
                 statement = `Well done you got it right! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${10 + bonus}!`
+                this.playSound('http://soundbible.com/mp3/Roaring%20Lion-SoundBible.com-527774719.mp3')
             } else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
                 eventBus.$emit('right-answer', (9 + bonus))
                 statement = `You were 10% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
+                this.playSound('http://soundbible.com/mp3/Elephant%20Trumpeting-SoundBible.com-1343370148.mp3')
             } else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
                 eventBus.$emit('right-answer', (8 + bonus))
                 statement = `You were 20% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${8 + bonus}!`
             } else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
                 eventBus.$emit('right-answer', (7 + bonus))
-                statement = `You were 30% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
+                statement = `You were 30% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${7 + bonus}!`
             } else if (((this.guessAnswer) >= (this.correctAnswer * 0.6)) && ((this.guessAnswer) <= (this.correctAnswer * 1.4))){
                 eventBus.$emit('right-answer', (6 + bonus))
-                statement = `You were 40% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
+                statement = `You were 40% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${6 + bonus}!`
             } else if (((this.guessAnswer) >= (this.correctAnswer * 0.5)) && ((this.guessAnswer) <= (this.correctAnswer * 1.5))){
                 eventBus.$emit('right-answer', (5 + bonus))
-                statement = `You were 50% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
+                statement = `You were 50% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${5 + bonus}!`
             } else{
                 statement = `Unlucky! The correct answer was ${this.correctAnswer}, you guessed ${this.guessAnswer}.`
             }
@@ -152,6 +154,11 @@ export default {
 
 
             eventBus.$emit('display-answer', statement)
+        },
+
+        playSound(sound){
+          const answerSound = new Audio(sound)
+          answerSound.play()
         }
     }
 }
