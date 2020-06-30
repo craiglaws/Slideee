@@ -5,10 +5,9 @@
         <div id="bigContainer">
             <div id="questionContainer">
                 <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.unit}}</h3>
-                <h1 class="pulse"><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">0</span></h1>
+                <p class="pulse"><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">X</span></p>
             </div>
         </div>
-
         <div class="guess">
             <p>{{this.guessAnswer}}</p>
         </div>
@@ -18,7 +17,7 @@
             <label>{{getMaxValue()}}</label>
         </div>
         <div class="submit-answer">
-            <button id="submit" class="button" v-on:click.once="checkAnswer">Submit Answer</button>
+            <button class="button submit" v-on:click.once="checkAnswer">Submit Answer</button>
         </div>
 
     </div>
@@ -149,9 +148,6 @@ export default {
                 statement = `Unlucky! The correct answer was ${this.correctAnswer}, you guessed ${this.guessAnswer}.`
             }
 
-
-
-
             eventBus.$emit('display-answer', statement)
         },
 
@@ -166,28 +162,53 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.guess {
-    display: flex;
+
+#timer{
     position: fixed;
-    justify-content: center;
-    align-items: center;
-    bottom: 23vh;
-    left: 25vw;
-    width: 50%;
+    top: -20vh;
+    left: -20vh;
+    z-index: 1
 }
-.guess p{
-    background: white;
-    border-radius: 20%;
-    padding: 1vh;
-    font-size: 5vh;
-    line-height: 4vh;
-    height: 4vh;
-    width: auto;
-    min-width: 3vw;
+#timer p{
+    z-index: 200;
+}
+
+.guess {
+
+    position: fixed;
     text-align: center;
-    border: 2px solid black;
+    align-items: center;
+    bottom: 26vh;
+    left: 45vw;
+    width: 8vw;
+    height: auto;
 
 }
+.guess p{
+    background-color: white;
+    border-radius: 50%;
+    padding: 2vh;
+    height: auto;
+    width: 5vw;
+    box-shadow:inset 0px 1px 0px 0px #5eeb84;
+    background-color:white;
+    border-radius:11px;
+    border:6px solid #38a3eb;
+    display:inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size:15px;
+    padding:6px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #0fa814;
+    width: 8vw;
+
+}
+
+.submit {
+    font-size: 2vh;
+
+}
+
 #bigContainer{
     left: 10px;
     top: 10vh;
@@ -197,22 +218,21 @@ export default {
     align-items: center;
 }
 #questionContainer{
-    display: flex;
+    position: fixed;
+    top: 10vh;
+    left: 15vw;
+    height: 30vh;
+    width: auto;
+    max-width: 40vw;
     color: black;
-    max-width: 50vw;
-    /* font-family: 'Poppins', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vw;
+
     background: rgba(255, 255, 255, 0.5);
-    margin-bottom: 20px;
-    margin-left: 15vw;
+
     padding: 25px;
     border-radius: 10px;
     border-style: ridge;
-    border-top-right-radius: 5vw;
-    border-bottom-right-radius: 5vw;
-}
-
-#questionContainer h3 {
-    font-size: 2vw;
 }
 
 .submit-answer{
@@ -229,8 +249,7 @@ export default {
     border:6px solid #38a3eb;
     display:inline-block;
     cursor:pointer;
-    font-family:Trebuchet MS;
-    font-size:15px;
+    font-family: 'Poppins', sans-serif;
     padding:6px 10px;
     text-decoration:none;
     text-shadow:0px 1px 0px #0fa814;
@@ -263,16 +282,22 @@ export default {
 }
 .slidecontainer label{
     background-color: white;
-    border-radius: 20%;
-    padding: 1vh;
-    height: 2vh;
-    min-width: 2vw;
+    border-radius: 50%;
+    padding: 2vh;
+    height: auto;
+    width: 5vw;
+    box-shadow:inset 0px 1px 0px 0px #5eeb84;
+    background-color:white;
+    border-radius:11px;
+    border:6px solid #38a3eb;
+    display:inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size:15px;
+    padding:6px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #0fa814;
+    width: 8vw;
     text-align: center;
-    width: auto;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    border: 2px solid black;
-    font-size: 2vh;
 }
 
 .slider {
@@ -311,37 +336,64 @@ export default {
     cursor: pointer;
 }
 .pulse {
+    position: absolute;
+    right: 2.2vw;
+    bottom: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 5vh;
     background: red;
     border-radius: 50%;
-    height: 75px;
-    width: 75px;
-    text-align: center;
+    margin: 10px;
+    height: 70px;
+    width: 70px;
     color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    font-size: 400%;
+    border: 1px solid black;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
     transform: scale(1);
     animation: pulse 1s infinite;
-    margin-left: 2vw;
-    margin-right: 1vw;
-    padding: 1vw 1.5vw 1vw 1.5vw;
-    border: 1px solid black;
+    z-index: 2000;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+.rotate {
+    animation: rotation 10s}
+
+
+    .linear {
+        animation-timing-function: linear;
     }
 
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    .infinite {
+        animation-iteration-count: infinite;
     }
 
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
     }
-}
-</style>
+
+    @keyframes  rotation {
+        from {
+            transform: rotate(359deg);
+        }
+        to {
+            transform: rotate(0deg);
+        }
+
+    }
+    </style>
