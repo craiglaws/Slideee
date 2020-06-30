@@ -124,22 +124,22 @@ export default {
 
             let statement = ""
 
-            let bonus = (this.timer / 2);
+            let bonus = (Math.round(this.timer / 3));
 
             if(this.guessAnswer == this.correctAnswer){
                 eventBus.$emit('right-answer', (10 + bonus))
-                statement = `FANTASTIC, you got it right! The answer was ${this.correctAnswer}. Your gained a total +${10 + bonus} points!`
+                statement = `FANTASTIC, you got it right! The answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. Your gained a total +${10 + bonus} points!`
                 this.playSound('http://soundbible.com/mp3/Roaring%20Lion-SoundBible.com-527774719.mp3')
             } else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
                 eventBus.$emit('right-answer', (8 + bonus))
-                statement = `So close! The correct answer was ${this.correctAnswer}. You were awarded +${8 + bonus}points!`
+                statement = `So close! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You were awarded +${8 + bonus}points!`
                 this.playSound('http://soundbible.com/mp3/Elephant%20Trumpeting-SoundBible.com-1343370148.mp3')
             } else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
                 eventBus.$emit('right-answer', (5 + bonus))
-                statement = `Nearly! The correct answer was ${this.correctAnswer}. You got +${5 + bonus} points!`
+                statement = `Nearly! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You got +${5 + bonus} points!`
             } else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
                 eventBus.$emit('right-answer', (2 + bonus))
-                statement = `A little off! The correct answer was ${this.correctAnswer}. You got ${2 + bonus} points!`
+                statement = `A little off! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You got ${2 + bonus} points!`
             // } else if (((this.guessAnswer) >= (this.correctAnswer * 0.6)) && ((this.guessAnswer) <= (this.correctAnswer * 1.4))){
             //     eventBus.$emit('right-answer', (6 + bonus))
             //     statement = `You were 40% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${6 + bonus}!`
@@ -147,7 +147,7 @@ export default {
             //     eventBus.$emit('right-answer', (5 + bonus))
             //     statement = `You were 50% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${5 + bonus}!`
             } else{
-                statement = `Unlucky! The correct answer was ${this.correctAnswer}.`
+                statement = `Unlucky! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}.`
             }
 
             eventBus.$emit('display-answer', statement)
