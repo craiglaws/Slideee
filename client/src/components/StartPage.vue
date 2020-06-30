@@ -20,33 +20,33 @@
 
         <div class="Iam">
             <b>
-            <h2 class="innerIam"><span class="shadowed">Improve your speed </span> <br />
-                        <span class="blue shadowed">Expand your knowledge</span> <br />
-                        <span class="yellow shadowed">Compete for a high score!</span> <br />
-                        <span class="green shadowed">Have fun!</span>
-            </h2>
+                <h2 class="innerIam"><span class="shadowed">Improve your speed </span> <br />
+                    <span class="blue shadowed">Expand your knowledge</span> <br />
+                    <span class="yellow shadowed">Compete for a high score!</span> <br />
+                    <span class="green shadowed">Have fun!</span>
+                </h2>
             </b>
         </div>
 
-            <form v-on:submit.prevent="startQuiz">
-                <div id="startForm">
-                    <label class="padding userEnter" id="username" for="username">Enter your name</label>
+        <form v-on:submit.prevent="startQuiz">
+            <div id="startForm">
+                <label class="padding userEnter" id="username" for="username">Enter your name</label>
+                <br>
+                <div id="userAndGo">
+                    <input id="textEnter" class="padding" type="text" name="username" v-model="username">
                     <br>
-                    <div id="userAndGo">
-                        <input id="textEnter" class="padding" type="text" name="username" v-model="username">
-                        <br>
-                        <input id="startQuiz" class="padding" type="submit" name="submit" value=">>">
-                    </div>
+                    <input id="startQuiz" class="padding" type="submit" name="submit" value=">>">
                 </div>
-            </form>
+            </div>
+        </form>
 
-            <img class="sparkle sparkle1" src="../assets/sparkle.png" alt="">
-            <img class="sparkle sparkle2" src="../assets/sparkle.png" alt="">
-            <img class="sparkle sparkle3" src="../assets/sparkle.png" alt="">
-            <img class="sparkle sparkle4" src="../assets/sparkle.png" alt="">
+        <img class="sparkle sparkle1" src="../assets/sparkle.png" alt="">
+        <img class="sparkle sparkle2" src="../assets/sparkle.png" alt="">
+        <img class="sparkle sparkle3" src="../assets/sparkle.png" alt="">
+        <img class="sparkle sparkle4" src="../assets/sparkle.png" alt="">
 
 
-        </div>
+    </div>
 
 </template>
 
@@ -54,30 +54,30 @@
 import GameService from '../services/GameService.js'
 import {eventBus} from '../main.js'
 export default {
-  name: 'start-page',
-  data() {
-    return {
-      username: ""
-    }
-  },
-  mounted(){
-    this.playSound()
-  },
-  methods: {
-    startQuiz(){
-      const newUser = {
-        name: this.username,
-        score: 0
-      }
-      GameService.postUser(newUser)
-      .then(res => eventBus.$emit('start-quiz', res))
+    name: 'start-page',
+    data() {
+        return {
+            username: ""
+        }
     },
-    playSound(){
-      const introAudio = new Audio('http://soundbible.com/mp3/Light%20Rain%20And%20Crickets-SoundBible.com-1664737469.mp3')
-      introAudio.play()
-    }
+    mounted(){
+        this.playSound()
+    },
+    methods: {
+        startQuiz(){
+            const newUser = {
+                name: this.username,
+                score: 0
+            }
+            GameService.postUser(newUser)
+            .then(res => eventBus.$emit('start-quiz', res))
+        },
+        playSound(){
+            const introAudio = new Audio('http://soundbible.com/mp3/Light%20Rain%20And%20Crickets-SoundBible.com-1664737469.mp3')
+            introAudio.play()
+        }
 
-  }
+    }
 }
 </script>
 
@@ -86,254 +86,254 @@ export default {
 
 
 #startPage{
-  display: flex;
-  justify-content: center;
-  background-image: url('../assets/animalsBackground.jpg');
-  background-size: cover;
-  background-repeat: none;
-  height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: url('../assets/animalsBackground.jpg');
+    background-size: cover;
+    background-repeat: none;
+    height: 100vh;
 }
 
 #topBar {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position: fixed;
-  z-index: 100;
-  height: 5vh;
-  width: 100%;
-  top: 0vh;
-  background-color: white;
-  border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    z-index: 100;
+    height: 5vh;
+    width: 100%;
+    top: 0vh;
+    background-color: white;
+    border-bottom: 2px solid black;
 }
 
 #topBarText {
-  margin-right: 7vw;
-  font-family: sans-serif;
-  font-weight: bold
+    margin-right: 7vw;
+    font-family: sans-serif;
+    font-weight: bold
 }
 
 #mainHeader {
-  top: 17vh;
-  color: white;
-  position: absolute;
-  font-size: 10vw;
-  z-index: 100;
-  font-family: 'Poppins', sans-serif;
-  /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
-  -webkit-text-stroke: 5px white;
+    top: 17vh;
+    color: white;
+    position: absolute;
+    font-size: 12vh;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif;
+    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
+    -webkit-text-stroke: 5px white;
 }
 
-    #catchphrase {
-        z-index: 100;
-        top: 45vh;
-        position: fixed;
-    }
+#catchphrase {
+    z-index: 100;
+    top: 45vh;
+    position: fixed;
+}
 
 
 
 
 #startForm{
-  position: relative;
-  top: 50vh;
-  padding: 5vw;
-  height: 30vh;
-  width: 100vw;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  border: none;
-  background-color: none;
-  text-align: center;
-  display: block;
+    position: relative;
+    top: 50vh;
+    padding: 5vw;
+    height: 30vh;
+    width: 100vw;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background-color: none;
+    text-align: center;
+    display: block;
 }
 
 .userEnter {
-  font-size: 2vw;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 2vw;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .padding {
-  margin-bottom: 12vh;
+    margin-bottom: 12vh;
 }
 
 #textEnter {
-  font-size: 2vw;
-  height: 5vh;
-  width: 20vw;
-  text-align: center;
+    font-size: 2vw;
+    height: 5vh;
+    width: 20vw;
+    text-align: center;
 }
 
 #textEnter:hover {
-  background-color: #fcfcfc;
+    background-color: #fcfcfc;
 }
 
 #userAndGo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
 }
 
 #startQuiz {
-  margin-left: 2vw;
-  height: 5vh;
-  width: 5vh;
-  font-size: 1.5vw;
-  color: white;
-  background-color: lightgreen;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  border: 1px solid black;
+    margin-left: 2vw;
+    height: 5vh;
+    width: 5vh;
+    font-size: 1.5vw;
+    color: white;
+    background-color: lightgreen;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    border: 1px solid black;
 }
 
 #startQuiz:hover {
-  background-color: white;
-  border: 3px solid black;
+    background-color: white;
+    border: 3px solid black;
 
 }
 
 button {
-  height: 10vh;
+    height: 10vh;
 }
 
 .red {
-  color: red;
+    color: red;
 }
 
 .green {
-  color: green;
+    color: green;
 }
 
 .blue {
-  color: blue;
+    color: blue;
 }
 
 .yellow {
-  color: #ffe51f;
+    color: #ffe51f;
 }
 
 .sparkle {
-  position: fixed;
-  height: 25vh;
-  width: auto;
-  animation: fade 4s infinite;
+    position: fixed;
+    height: 25vh;
+    width: auto;
+    animation: fade 4s infinite;
 }
 
 .sparkle1 {
-  left: 4vw;
-  top: 7vh;
-  animation-delay: 0.4s;
+    left: 4vw;
+    top: 7vh;
+    animation-delay: 0.4s;
 }
 
 .sparkle2 {
-  left: 14vw;
-  top: 65vh;
-  animation-delay: 0.3s;
+    left: 14vw;
+    top: 65vh;
+    animation-delay: 0.3s;
 }
 
 .sparkle3 {
-  left: 70vw;
-  top: 5vh;
-  animation-delay: 0.9s;
+    left: 70vw;
+    top: 5vh;
+    animation-delay: 0.9s;
 }
 
 .sparkle4 {
-  left: 80vw;
-  top: 70vh;
-  animation-delay: 0.6s;
+    left: 80vw;
+    top: 70vh;
+    animation-delay: 0.6s;
 }
 
 @keyframes fade {
-  from {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
-    .shadowed {
-        text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
-    }
+.shadowed {
+    text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+}
 
-    .Iam {
-        top: 45vh;
-        text-align: center;
-        position: fixed;
-        padding: 2em 5em;
-        font: normal 2vh Montserrat, sans-serif;
-        color: #999;
-    }
-    .Iam p {
-        float: left;
-        margin-right: 0.3em;
-    }
-    .Iam b {
-        float: left;
-        overflow: hidden;
-        position: relative;
-        height: 3vh;
-        /* HEIGHT OF SHOWING AREA */
-        line-height: 4vh;
-    }
-    .Iam .innerIam {
-        display: inline-block;
-        color: #e74c3c;
-        position: relative;
-        white-space: nowrap;
-        top: 0;
-        left: 0;
+.Iam {
+    top: 42vh;
+    text-align: center;
+    position: fixed;
+    padding: 2em 5em;
+    font: normal 2vh Montserrat, sans-serif;
+    color: #999;
+}
+.Iam p {
+    float: left;
+    margin-right: 0.3em;
+}
+.Iam b {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    height: 3vh;
+    /* HEIGHT OF SHOWING AREA */
+    line-height: 4vh;
+}
+.Iam .innerIam {
+    display: inline-block;
+    color: #e74c3c;
+    position: relative;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
 
 
-        /*animation*/
-        -webkit-animation:move 10s;
-        -moz-animation:move 10s;
-        -ms-animation:move 10s;
-        -o-animation:move 10s;
-        animation:move 10s;
-        /*animation-iteration-count*/
-        -webkit-animation-iteration-count:infinite;
-        -moz-animation-iteration-count:infinite;
-        -ms-animation-iteration-count:infinite;
-        -o-animation-iteration-count:infinite;
-        animation-iteration-count:infinite;
-        /*animation-delay*/
-        -webkit-animation-delay:1s;
-        -moz-animation-delay:1s;
-        -ms-animation-delay:1s;
-        -o-animation-delay:1s;
-        animation-delay:1s;
-    }
+    /*animation*/
+    -webkit-animation:move 10s;
+    -moz-animation:move 10s;
+    -ms-animation:move 10s;
+    -o-animation:move 10s;
+    animation:move 10s;
+    /*animation-iteration-count*/
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+    -o-animation-iteration-count:infinite;
+    animation-iteration-count:infinite;
+    /*animation-delay*/
+    -webkit-animation-delay:1s;
+    -moz-animation-delay:1s;
+    -ms-animation-delay:1s;
+    -o-animation-delay:1s;
+    animation-delay:1s;
+}
 
-    @-webkit-keyframes move {
-        0%  { top: 0px; }
-        20% { top: -3vh; }
-        40% { top: -7.2vh; }
-        60% { top: -10.9vh; }
-        80% { top: -14.6vh; }
-    }
-    @-moz-keyframes move {
-        0%  { top: 0px; }
-        20% { top: -3vh; }
-        40% { top: -7.2vh; }
-        60% { top: -10.9vh; }
-        80% { top: -14.6vh; }
-    }
-    @-o-keyframes move {
-        0%  { top: 0px; }
-        20% { top: -3vh; }
-        40% { top: -7.2vh; }
-        60% { top: -10.9vh; }
-        80% { top: -14.6vh; }
-    }
-    @keyframes move {
-        0%  { top: 0px; }
-        20% { top: -3vh; }
-        40% { top: -7.2vh; }
-        60% { top: -10.9vh; }
-        80% { top: -14.6vh; }
-    }
+@-webkit-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -3vh; }
+    40% { top: -7.2vh; }
+    60% { top: -10.9vh; }
+    80% { top: -14.6vh; }
+}
+@-moz-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -3vh; }
+    40% { top: -7.2vh; }
+    60% { top: -10.9vh; }
+    80% { top: -14.6vh; }
+}
+@-o-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -3vh; }
+    40% { top: -7.2vh; }
+    60% { top: -10.9vh; }
+    80% { top: -14.6vh; }
+}
+@keyframes move {
+    0%  { top: 0px; }
+    20% { top: -3vh; }
+    40% { top: -7.2vh; }
+    60% { top: -10.9vh; }
+    80% { top: -14.6vh; }
+}
 
 </style>
