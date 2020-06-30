@@ -30,10 +30,10 @@
 
         <form v-on:submit.prevent="startQuiz">
             <div id="startForm">
-                <label class="padding userEnter" id="username" for="username">Enter your name</label>
+                <!-- <label class="padding userEnter" id="username" for="username">Enter your name</label> -->
                 <br>
                 <div id="userAndGo">
-                    <input id="textEnter" class="padding" type="text" name="username" v-model="username">
+                    <input id="textEnter" class="padding" type="text" name="username" v-model="username" placeholder="Enter Your Name" required>
                     <br>
                     <input id="startQuiz" class="padding" type="submit" name="submit" value=">>">
                 </div>
@@ -130,9 +130,6 @@ export default {
     position: fixed;
 }
 
-
-
-
 #startForm{
     position: relative;
     top: 50vh;
@@ -161,6 +158,16 @@ export default {
     height: 5vh;
     width: 20vw;
     text-align: center;
+    box-shadow:inset 0px 1px 0px 0px #5eeb84;
+    background-color:white;
+    border-radius:11px;
+    border:6px solid #38a3eb;
+    display:inline-block;
+    cursor:pointer;
+    font-family: 'Poppins', sans-serif;
+    padding:6px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #0fa814;
 }
 
 #textEnter:hover {
@@ -176,13 +183,28 @@ export default {
 
 #startQuiz {
     margin-left: 2vw;
-    height: 5vh;
-    width: 5vh;
+    height: 7.5vh;
+    width: 7.5vh;
     font-size: 1.5vw;
     color: white;
-    background-color: lightgreen;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    border: 1px solid black;
+
+    box-shadow:inset 0px 1px 0px 0px #5eeb84;
+    background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
+    background-color:#73f53f;
+    border-radius:11px;
+    border:6px solid #38a3eb;
+    display:inline-block;
+    cursor:pointer;
+    font-family: 'Poppins', sans-serif;
+    padding:6px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #0fa814;
+
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    transform: scale(1);
+    animation: startQuiz 1s infinite;
+    z-index: 2000;
+
 }
 
 #startQuiz:hover {
@@ -191,6 +213,14 @@ export default {
 
 }
 
+#startQuiz:hover {
+    background:linear-gradient(to bottom, #11f06a 5%, #73f53f 100%);
+    background-color:#11f06a;
+}
+#startQuiz:active {
+    position:relative;
+    top:1px;
+}
 button {
     height: 10vh;
 }
@@ -336,4 +366,35 @@ button {
     80% { top: -14.6vh; }
 }
 
+@keyframes startQuiz {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 0.3; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: red;
+  opacity: 0.3
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: red;
+  opacity: 0.3
+}
 </style>

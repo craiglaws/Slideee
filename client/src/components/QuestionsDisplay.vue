@@ -250,6 +250,7 @@ export default {
     text-decoration:none;
     text-shadow:0px 1px 0px #0fa814;
     width: 10vw;
+    height: 10vh;
 }
 .button:hover {
     background:linear-gradient(to bottom, #11f06a 5%, #73f53f 100%);
@@ -260,9 +261,6 @@ export default {
     top:1px;
 }
 
-#submit {
-    font-size: 1.3vw;
-}
 
 #submit:hover {
     background-color: red;

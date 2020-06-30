@@ -279,20 +279,20 @@ export default {
         border-style: ridge;
     }
     .button {
-        box-shadow:inset 0px 1px 0px 0px #5eeb84;
-        background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
-        background-color:#73f53f;
-        border-radius:11px;
-        border:6px solid #38a3eb;
-        display:inline-block;
-        cursor:pointer;
-        color:#000000;
-        font-family: 'Poppins', sans-serif;
-        font-size:15px;
-        padding:6px 10px;
-        text-decoration:none;
-        text-shadow:0px 1px 0px #0fa814;
-    }
+      box-shadow:inset 0px 1px 0px 0px #5eeb84;
+      background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
+      background-color:#73f53f;
+      border-radius:11px;
+      border:6px solid #38a3eb;
+      display:inline-block;
+      cursor:pointer;
+      font-family: 'Poppins', sans-serif;
+      padding:6px 10px;
+      text-decoration:none;
+      text-shadow:0px 1px 0px #0fa814;
+      width: 10vw;
+      height: 10vh;
+        }
     .button:hover {
         background:linear-gradient(to bottom, #11f06a 5%, #73f53f 100%);
         background-color:#11f06a;
@@ -302,9 +302,31 @@ export default {
         top:1px;
     }
     #next{
-        position: fixed;
-        bottom: 15vh;
-        left: 45vw;
+      position: fixed;
+      bottom: 7.5vh;
+      left: 45vw;
+
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+      transform: scale(1);
+      animation: next 1s infinite;
+      z-index: 2000;
+    }
+
+    @keyframes next {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
     }
 
 

@@ -116,10 +116,41 @@ tbody tr:nth-child(even) {
   margin-left: 2vw;
   height: 10vh;
   width: 20vh;
-  font-size: 2vw;
-  color: white;
-  background-color: lightgreen;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  border: 1px solid black;
+  font-size: 1.2vw;
+  color: Black;
+
+  box-shadow:inset 0px 1px 0px 0px #5eeb84;
+  background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
+  background-color:#73f53f;
+  border-radius:11px;
+  border:6px solid #38a3eb;
+  display:inline-block;
+  cursor:pointer;
+  font-family: 'Poppins', sans-serif;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #0fa814;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: playAgain 1s infinite;
+  z-index: 2000;
+
+}
+
+@keyframes playAgain {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 </style>
