@@ -9,7 +9,7 @@
 
         <div id="userScore">
             <img src="../assets/userScore.png" class="rotate linear infinite" width="400" height="400"/>
-            <p>{{user.name}} <br> {{user.score}} pts</p>
+            <p>Q {{this.questionCounter}} <br> {{user.name}} <br> {{user.score}} pts</p>
         </div>
 
         <div v-if="selectedAnimal && selectedQuestion">
@@ -139,8 +139,8 @@ export default {
     font-size: 25px;
     color: white;
     position: fixed;
-    top: 2.5vh;
-    right: 5vh;
+    top: -1vh;
+    right: 4vh;
 
 
     z-index: 2000;

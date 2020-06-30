@@ -428,17 +428,17 @@ db.animals.insertMany([
 db.users.insertMany([
   {
     "name": "Sam",
-    "score": 77
+    "score": 54
   },
 
   {
     "name": "Donald",
-    "score": 72
+    "score": 42
   },
 
   {
     "name": "Craig",
-    "score": 69
+    "score": 49
   }
 ]);
 
