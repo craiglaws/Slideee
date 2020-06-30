@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <div id="questionsPage" :img="selectedAnimal.photo">
+  <div id="questionsPage">
     <!-- current player + score -->
 
     <div id="userScore">
@@ -91,6 +91,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#test {
+    position: fixed;
+    z-index: 1000;
+    height: 50vh;
+    background-color: red;
+}
 #questionsPage{
   background-image: url('../assets/questionFrameTransparent.png');
   background-size: cover;

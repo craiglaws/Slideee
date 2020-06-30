@@ -296,38 +296,31 @@ export default {
         -o-animation-delay:1s;
         animation-delay:1s;
     }
-    @keyframes move{
-        0%  { top: 0px; }
-        20% { top: -3.7vh; }
-        40% { top: -7.2vh; }
-        60% { top: -10.9vh; }
-        80% { top: -14.6vh; }
-    }
 
     @-webkit-keyframes move {
         0%  { top: 0px; }
-        20% { top: -3.7vh; }
+        20% { top: -3vh; }
         40% { top: -7.2vh; }
         60% { top: -10.9vh; }
         80% { top: -14.6vh; }
     }
     @-moz-keyframes move {
         0%  { top: 0px; }
-        20% { top: -50px; }
-        40% { top: -100px; }
-        60% { top: -150px; }
-        80% { top: -200px; }
+        20% { top: -3vh; }
+        40% { top: -7.2vh; }
+        60% { top: -10.9vh; }
+        80% { top: -14.6vh; }
     }
     @-o-keyframes move {
         0%  { top: 0px; }
-        20% { top: -50px; }
-        40% { top: -100px; }
-        60% { top: -150px; }
-        80% { top: -200px; }
+        20% { top: -3vh; }
+        40% { top: -7.2vh; }
+        60% { top: -10.9vh; }
+        80% { top: -14.6vh; }
     }
     @keyframes move {
         0%  { top: 0px; }
-        20% { top: -3.7vh; }
+        20% { top: -3vh; }
         40% { top: -7.2vh; }
         60% { top: -10.9vh; }
         80% { top: -14.6vh; }
