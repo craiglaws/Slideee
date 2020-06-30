@@ -1,7 +1,6 @@
 <template lang="html">
 
     <div>
-        {{ findCorrectAnswer() }}
         <div id="bigContainer">
             <div id="questionContainer">
                 <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.unit}}</h3>
@@ -52,6 +51,9 @@ export default {
             },
             immediate: true // This ensures the watcher is triggered upon creation
         }
+    },
+    mounted(){
+      this.findCorrectAnswer()
     },
     methods: {
         findCorrectAnswer(){
@@ -192,7 +194,7 @@ export default {
     border:6px solid #38a3eb;
     display:inline-block;
     font-family: 'Poppins', sans-serif;
-    font-size:2vh;
+    font-size:4vh;
     text-decoration:none;
     text-shadow:0px 1px 0px #0fa814;
     min-width: 6vw;
