@@ -19,7 +19,7 @@
         <div v-if="toggleAnswer" >
             <div id="answerContainer">
                 <div>
-                    <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{ selectedQuestion.unit}}</h3>
+                    <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{ selectedQuestion.end}}</h3>
                     <p id="answer">{{ this.statement }}</p>
                 </div>
             </div>
@@ -90,14 +90,7 @@ export default {
     components: {
         'questions-display': QuestionsDisplay
     }
-    // computed: {
-    //   images() {
-    //     if(!this.selectedAnimal) return null;
-    //      return {
-    //        selectedImagePic: require(this.selectedAnimal.photo)
-    //      }
-    //   }
-    // }
+
 
 }
 

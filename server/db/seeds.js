@@ -447,27 +447,32 @@ db.questions.insertMany([
     {
         "question": "What is the maximum speed of the ",
         "value": "speed",
-        "unit": "to the nearest mph?"
+        "end": "to the nearest mph?",
+        "unit": "mph"
     },
     {
         "question": "What is the maximum weight of the ",
         "value": "weight",
-        "unit": "in kilograms?"
+        "end": "in kilograms?",
+        "unit": "kilograms"
     },
     {
         "question": "What is the height of the ",
         "value": "size",
-        "unit": "in centimeters?"
+        "end": "in centimeters?",
+        "unit": "centimeters"
     },
     {
         "question": "What is the total population of the ",
         "value": "population",
-        "unit": "in the world?"
+        "end": "in the world?",
+        "unit": ""
     },
     {
-        "question": "What is the average lifespan of the ",
+        "question": "How many years does the average ",
         "value": "lifespan",
-        "unit": "?"
+        "end": "live for?",
+        "unit": "years"
     }
 
 ])
