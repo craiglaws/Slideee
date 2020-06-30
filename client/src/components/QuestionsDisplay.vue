@@ -216,7 +216,7 @@ export default {
 #questionContainer{
     position: fixed;
     top: 10vh;
-    left: 15vw;
+    left: 10vw;
     height: 30vh;
     width: auto;
     max-width: 40vw;

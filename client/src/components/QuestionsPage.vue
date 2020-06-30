@@ -114,7 +114,7 @@ export default {
 #answerContainer{
     position: fixed;
     top: 10vh;
-    left: 15vw;
+    left: 10vw;
     height: 30vh;
     width: auto;
     max-width: 40vw;
@@ -146,8 +146,8 @@ export default {
     font-size: 25px;
     color: white;
     position: fixed;
-    top: 4vh;
-    right: 4vh;
+    top: 2.5vh;
+    right: 5vh;
 
 
     z-index: 2000;
