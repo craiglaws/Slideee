@@ -1,25 +1,27 @@
 <template lang="html">
 
-    <div>
-        {{ findCorrectAnswer() }}
-        <div id="bigContainer">
-            <div id="questionContainer">
-                <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.unit}}</h3>
-                <h1 class="pulse"><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">0</span></h1>
-            </div>
-        </div>
-
-        <div class="guess">
-            <p>{{this.guessAnswer}}</p>
-        </div>
-        <div class="slidecontainer">
-            <label>0</label><br>
-            <input type="range" min="0" :max="getMaxValue()" :step="(getMaxValue()/20)" class="slider" v-model="guessAnswer" value="1" required><br>
-            <label>{{getMaxValue()}}</label>
-        </div>
-        <div class="submit-answer">
-            <button id="submit" class="button" v-on:click.once="checkAnswer">Submit Answer</button>
-        </div>
+  <div>
+    {{ findCorrectAnswer() }}
+    <div id="bigContainer">
+      <div id="questionContainer">
+        <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.unit}}</h3>
+      </div>
+      <div id="timer">
+      <img src="../assets/userScore.png" class="rotate linear infinite" width="400" height="400"/>
+      <p><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">X</span></p>
+      </div>
+    </div>
+    <div class="guess">
+      <p>{{this.guessAnswer}}</p>
+    </div>
+    <div class="slidecontainer">
+      <label>0</label><br>
+      <input type="range" min="0" :max="getMaxValue()" :step="(getMaxValue()/20)" class="slider" v-model="guessAnswer" value="1" required><br>
+      <label>{{getMaxValue()}}</label>
+    </div>
+    <div class="submit-answer">
+      <button class="button" v-on:click.once="checkAnswer">Submit Answer</button>
+    </div>
 
     </div>
 
@@ -119,38 +121,35 @@ export default {
             return max_value
         },
 
-        checkAnswer(){
+    checkAnswer(){
 
-            let statement = ""
+      let statement = ""
 
-            let bonus = (this.timer / 2);
+      let bonus = (this.timer / 2);
 
-            if(this.guessAnswer == this.correctAnswer){
-                eventBus.$emit('right-answer', (10 + bonus))
-                statement = `Well done you got it right! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${10 + bonus}!`
-                this.playSound('http://soundbible.com/mp3/Roaring%20Lion-SoundBible.com-527774719.mp3')
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
-                eventBus.$emit('right-answer', (9 + bonus))
-                statement = `You were 10% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
-                this.playSound('http://soundbible.com/mp3/Elephant%20Trumpeting-SoundBible.com-1343370148.mp3')
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
-                eventBus.$emit('right-answer', (8 + bonus))
-                statement = `You were 20% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${8 + bonus}!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
-                eventBus.$emit('right-answer', (7 + bonus))
-                statement = `You were 30% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${7 + bonus}!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.6)) && ((this.guessAnswer) <= (this.correctAnswer * 1.4))){
-                eventBus.$emit('right-answer', (6 + bonus))
-                statement = `You were 40% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${6 + bonus}!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.5)) && ((this.guessAnswer) <= (this.correctAnswer * 1.5))){
-                eventBus.$emit('right-answer', (5 + bonus))
-                statement = `You were 50% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${5 + bonus}!`
-            } else{
-                statement = `Unlucky! The correct answer was ${this.correctAnswer}, you guessed ${this.guessAnswer}.`
-            }
-
-
-
+      if(this.guessAnswer == this.correctAnswer){
+        eventBus.$emit('right-answer', (10 + bonus))
+        statement = `Well done you got it right! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${10 + bonus}!`
+        this.playSound('http://soundbible.com/mp3/Roaring%20Lion-SoundBible.com-527774719.mp3')
+      } else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
+        eventBus.$emit('right-answer', (9 + bonus))
+        statement = `You were 10% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${9 + bonus}!`
+        this.playSound('http://soundbible.com/mp3/Elephant%20Trumpeting-SoundBible.com-1343370148.mp3')
+      } else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
+        eventBus.$emit('right-answer', (8 + bonus))
+        statement = `You were 20% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${8 + bonus}!`
+      } else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
+        eventBus.$emit('right-answer', (7 + bonus))
+        statement = `You were 30% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${7 + bonus}!`
+      } else if (((this.guessAnswer) >= (this.correctAnswer * 0.6)) && ((this.guessAnswer) <= (this.correctAnswer * 1.4))){
+        eventBus.$emit('right-answer', (6 + bonus))
+        statement = `You were 40% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${6 + bonus}!`
+      } else if (((this.guessAnswer) >= (this.correctAnswer * 0.5)) && ((this.guessAnswer) <= (this.correctAnswer * 1.5))){
+        eventBus.$emit('right-answer', (5 + bonus))
+        statement = `You were 50% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${5 + bonus}!`
+      } else{
+        statement = `Unlucky! The correct answer was ${this.correctAnswer}, you guessed ${this.guessAnswer}.`
+      }
 
             eventBus.$emit('display-answer', statement)
         },
@@ -166,26 +165,45 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#timer{
+  position: fixed;
+  top: -20vh;
+  left: -20vh;
+  z-index: 1
+}
+#timer p{
+  z-index: 200;
+}
+
 .guess {
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    bottom: 23vh;
-    left: 25vw;
-    width: 50%;
+
+  position: fixed;
+  text-align: center;
+  align-items: center;
+  bottom: 26vh;
+  left: 45vw;
+  width: 8vw;
+  height: auto;
+
 }
 .guess p{
-    background: white;
-    border-radius: 20%;
-    padding: 1vh;
-    font-size: 5vh;
-    line-height: 4vh;
-    height: 4vh;
-    width: auto;
-    min-width: 3vw;
-    text-align: center;
-    border: 2px solid black;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2vh;
+  height: auto;
+  width: 5vw;
+  box-shadow:inset 0px 1px 0px 0px #5eeb84;
+  background-color:white;
+  border-radius:11px;
+  border:6px solid #38a3eb;
+  display:inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size:15px;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #0fa814;
+  width: 8vw;
 
 }
 #bigContainer{
@@ -197,6 +215,7 @@ export default {
     align-items: center;
 }
 #questionContainer{
+<<<<<<< HEAD
     display: flex;
     color: black;
     max-width: 50vw;
@@ -213,28 +232,44 @@ export default {
 
 #questionContainer h3 {
     font-size: 2vw;
+=======
+  position: fixed;
+  top: 10vh;
+  left: 15vw;
+  height: 30vh;
+  width: 30vw;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  padding: 25px;
+  border-radius: 10px;
+  border-style: ridge;
+>>>>>>> 098f377ad9338c67d7b91feaf4a57afccadc6ed5
 }
 
 .submit-answer{
-    position: fixed;
-    bottom: 8vh;
-    left: 45vw;
+  position: fixed;
+  bottom: 10vh;
+  left: 45vw;
 }
 
 .button {
-    box-shadow:inset 0px 1px 0px 0px #5eeb84;
-    background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
-    background-color:#73f53f;
-    border-radius:11px;
-    border:6px solid #38a3eb;
-    display:inline-block;
-    cursor:pointer;
-    font-family:Trebuchet MS;
-    font-size:15px;
-    padding:6px 10px;
-    text-decoration:none;
-    text-shadow:0px 1px 0px #0fa814;
-    width: 10vw;
+  box-shadow:inset 0px 1px 0px 0px #5eeb84;
+  background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
+  background-color:#73f53f;
+  border-radius:11px;
+  border:6px solid #38a3eb;
+  display:inline-block;
+  cursor:pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size:15px;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #0fa814;
+  width: 10vw;
 }
 .button:hover {
     background:linear-gradient(to bottom, #11f06a 5%, #73f53f 100%);
@@ -262,17 +297,23 @@ export default {
     width: 60%;
 }
 .slidecontainer label{
-    background-color: white;
-    border-radius: 20%;
-    padding: 1vh;
-    height: 2vh;
-    min-width: 2vw;
-    text-align: center;
-    width: auto;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    border: 2px solid black;
-    font-size: 2vh;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2vh;
+  height: auto;
+  width: 5vw;
+  box-shadow:inset 0px 1px 0px 0px #5eeb84;
+  background-color:white;
+  border-radius:11px;
+  border:6px solid #38a3eb;
+  display:inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size:15px;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #0fa814;
+  width: 8vw;
+  text-align: center;
 }
 
 .slider {
@@ -311,22 +352,30 @@ export default {
     cursor: pointer;
 }
 .pulse {
-    background: red;
-    border-radius: 50%;
-    height: 75px;
-    width: 75px;
-    text-align: center;
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    font-size: 400%;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
-    transform: scale(1);
-    animation: pulse 1s infinite;
-    margin-left: 2vw;
-    margin-right: 1vw;
-    padding: 1vw 1.5vw 1vw 1.5vw;
-    border: 1px solid black;
+
+  background: red;
+  border-radius: 50%;
+  margin: 10px;
+  height: 70px;
+  width: 70px;
+
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: scale(1);
+  animation: pulse 1s infinite;
+  z-index: 2000;
 }
+
+.rotate {
+  animation: rotation 10s}
+
+
+  .linear {
+    animation-timing-function: linear;
+  }
+
+  .infinite {
+    animation-iteration-count: infinite;
+  }
 
 @keyframes pulse {
     0% {
@@ -343,5 +392,15 @@ export default {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
+}
+
+  @keyframes  rotation {
+    from {
+      transform: rotate(359deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+
 }
 </style>
