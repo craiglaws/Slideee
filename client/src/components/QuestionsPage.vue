@@ -121,9 +121,12 @@ export default {
   right: -20vh;
 }
 #userScore p{
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  color: white;
   position: fixed;
-  top: 6vh;
-  right: 5vh;
+  top: 4vh;
+  right: 4vh;
 
 
   z-index: 2000;
@@ -151,12 +154,12 @@ export default {
   #questionContainer{
     position: fixed;
     top: 10vh;
-    left: 10vw;
+    left: 15vw;
     height: 30vh;
-    width: 40vw;
+    width: 30vw;
     color: black;
     font-family: 'Poppins', sans-serif;
-
+    font-size: 22px;
 
     background: rgba(255, 255, 255, 0.5);
 
@@ -173,7 +176,7 @@ export default {
     display:inline-block;
     cursor:pointer;
     color:#000000;
-    font-family:Trebuchet MS;
+    font-family: 'Poppins', sans-serif;
     font-size:15px;
     padding:6px 10px;
     text-decoration:none;
