@@ -378,7 +378,7 @@ db.animals.insertMany([
     "speed": 19,
     "weight": 12,
     "size": 30,
-    "population": 560000,
+    "population": 550000,
     "lifespan": 15,
     "photo": "/animal_pictures/badger.jpeg"
   },
