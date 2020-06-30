@@ -76,16 +76,17 @@ export default {
 }
 
 .userScore{
-  color: snow;
+  color: black;
   font-size: 3.5vw;
-  margin-top: 11vh;
-  background-image: url('../assets/pink_leopard.jpeg');
+  margin-top: 4vh;
+  background-image: url('../assets/cloud.png');
   background-size: cover;
   text-align: center;
-  border-radius: 33%;
   padding: 0 2vw;
   margin-bottom: 10px;
+  height: 32vh;
 }
+
 
 table{
   height: 30vh;

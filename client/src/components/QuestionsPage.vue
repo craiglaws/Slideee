@@ -24,7 +24,8 @@
       </div>
 
       <div id="next">
-        <button class="button" name="button" v-on:click="nextQuestion">Next Question</button>
+        <button v-if="questionCounter < 9" class="button" name="button" v-on:click="nextQuestion">Next Question</button>
+        <button v-if="questionCounter >= 9" class="button" name="button" v-on:click="nextQuestion">Finish</button>
       </div>
     </div>
 
@@ -50,7 +51,7 @@ export default {
 
     }
   },
-  props: ['user', 'animals', 'questions'],
+  props: ['user', 'animals', 'questions', 'questionCounter'],
 
   mounted(){
     eventBus.$on('correct-answer', (correctAnswer) => {
@@ -69,11 +70,10 @@ export default {
   },
   methods: {
     getNewAnimal(){
-      console.log('getNewAnimal called');
       this.selectedAnimal = this.animals[Math.floor(Math.random() * this.animals.length)]
     },
     getNewQuestion(){
-      console.log('getNewQuestion called');
+      eventBus.$emit('add-to-counter', 1)
       this.selectedQuestion = this.questions[Math.floor(Math.random() * this.questions.length)]
     },
     revealAnswer(){

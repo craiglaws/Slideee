@@ -148,7 +148,7 @@ export default {
         statement = `Unlucky! The correct answer was ${this.correctAnswer}, you guessed ${this.guessAnswer}.`
       }
 
-      eventBus.$emit('add-to-counter', 1)
+  
 
 
       eventBus.$emit('display-answer', statement)
