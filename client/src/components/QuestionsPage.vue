@@ -1,6 +1,10 @@
 <template lang="html">
 
   <div id="questionsPage">
+    <div v-if="selectedAnimal">
+      <img :src="selectedAnimal.photo" alt="PIC">
+    </div>
+
     <!-- current player + score -->
 
     <div id="userScore">
@@ -9,8 +13,6 @@
     </div>
 
     <div v-if="selectedAnimal && selectedQuestion">
-      <!-- {{ getNewQuestion() }}
-      {{ getNewAnimal() }} -->
       <questions-display v-if="toggleAnswer == false" :selectedAnimal="selectedAnimal" :selectedQuestion="selectedQuestion" />
     </div>
 
@@ -18,6 +20,7 @@
       <div id="questionContainer">
         <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{ selectedQuestion.unit}}</h3>
         <p>{{ this.statement }}</p>
+
       </div>
 
       <div >
@@ -44,6 +47,7 @@ export default {
       selectedQuestion: null,
       toggleAnswer: false,
       statement: null
+
     }
   },
   props: ['user', 'animals', 'questions'],
@@ -85,6 +89,14 @@ export default {
   components: {
     'questions-display': QuestionsDisplay
   }
+  // computed: {
+  //   images() {
+  //     if(!this.selectedAnimal) return null;
+  //      return {
+  //        selectedImagePic: require(this.selectedAnimal.photo)
+  //      }
+  //   }
+  // }
 
 }
 
@@ -144,28 +156,28 @@ export default {
     border-style: ridge;
   }
   .button {
-	box-shadow:inset 0px 1px 0px 0px #5eeb84;
-	background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
-	background-color:#73f53f;
-	border-radius:11px;
-	border:6px solid #38a3eb;
-	display:inline-block;
-	cursor:pointer;
-	color:#000000;
-	font-family:Trebuchet MS;
-	font-size:15px;
-	padding:6px 10px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #0fa814;
-}
-.button:hover {
-	background:linear-gradient(to bottom, #11f06a 5%, #73f53f 100%);
-	background-color:#11f06a;
-}
-.button:active {
-	position:relative;
-	top:1px;
-}
+    box-shadow:inset 0px 1px 0px 0px #5eeb84;
+    background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
+    background-color:#73f53f;
+    border-radius:11px;
+    border:6px solid #38a3eb;
+    display:inline-block;
+    cursor:pointer;
+    color:#000000;
+    font-family:Trebuchet MS;
+    font-size:15px;
+    padding:6px 10px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #0fa814;
+  }
+  .button:hover {
+    background:linear-gradient(to bottom, #11f06a 5%, #73f53f 100%);
+    background-color:#11f06a;
+  }
+  .button:active {
+    position:relative;
+    top:1px;
+  }
 
 
   </style>
