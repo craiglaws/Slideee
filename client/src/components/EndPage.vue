@@ -2,7 +2,8 @@
   <div id="endPage">
 
     <div class="userScore">
-    <p>Well done {{user.name}}
+    <p>Well done <br>
+      {{user.name}}
       <br>
     You scored {{user.score}}</p>
     </div>
@@ -77,14 +78,18 @@ export default {
 
 .userScore{
   color: black;
-  font-size: 3.5vw;
-  margin-top: 4vh;
+  font-size: 3vw;
+  margin-top: 3vh;
   background-image: url('../assets/cloud.png');
   background-size: cover;
   text-align: center;
-  padding: 0 2vw;
-  margin-bottom: 10px;
-  height: 32vh;
+  padding: 0  6vw;
+
+  height: 35vh;
+}
+.userScore p {
+  position: relative;
+  top: 2vh;
 }
 
 

@@ -140,7 +140,8 @@ export default {
     color: white;
     position: fixed;
     top: -1vh;
-    right: 4vh;
+    right: 3vh;
+    text-align: right;
 
 
     z-index: 2000;
