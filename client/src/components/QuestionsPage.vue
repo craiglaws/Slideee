@@ -183,6 +183,7 @@ export default {
         border-style: ridge;
     }
     .button {
+        width: 100%;
         box-shadow:inset 0px 1px 0px 0px #5eeb84;
         background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
         background-color:#73f53f;
@@ -192,7 +193,7 @@ export default {
         cursor:pointer;
         color:#000000;
         font-family:Trebuchet MS;
-        font-size:15px;
+        font-size:1.5vw;
         padding:6px 10px;
         text-decoration:none;
         text-shadow:0px 1px 0px #0fa814;
@@ -208,7 +209,7 @@ export default {
     #next{
         position: fixed;
         bottom: 15vh;
-        left: 45vw;
+        left: 42vw;
     }
 
     #questionContainer{

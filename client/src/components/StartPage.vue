@@ -28,14 +28,27 @@
             </b>
         </div>
 
+
+
+        <div v-if="toggleHelp" class="instructions">
+          <p>HOW TO PLAY:</p>
+          <p>Click and drag the slider thumb to choose value.</p>
+          <p>Click Submit</p>
+          <p>Points are rewarded for accuracy and time</p>
+          <p>Good Luck!!!</p>
+
+        </div>
+
         <form v-on:submit.prevent="startQuiz">
             <div id="startForm">
                 <!-- <label class="padding userEnter" id="username" for="username">Enter your name</label> -->
                 <br>
                 <div id="userAndGo">
+                  <button class="help padding" v-on:click="openHelp"  name="button">Help?</button>
                     <input id="textEnter" class="padding" type="text" name="username" v-model="username" placeholder="Enter Your Name" required>
                     <br>
                     <input id="startQuiz" class="padding" type="submit" name="submit" value=">>">
+
                 </div>
             </div>
         </form>
@@ -57,7 +70,8 @@ export default {
     name: 'start-page',
     data() {
         return {
-            username: ""
+            username: "",
+            toggleHelp: false
         }
     },
     mounted(){
@@ -75,6 +89,10 @@ export default {
         playSound(){
             const introAudio = new Audio('http://soundbible.com/mp3/Light%20Rain%20And%20Crickets-SoundBible.com-1664737469.mp3')
             introAudio.play()
+        },
+
+        openHelp(){
+          this.toggleHelp = !this.toggleHelp
         }
 
     }
@@ -205,6 +223,53 @@ export default {
     animation: startQuiz 1s infinite;
     z-index: 2000;
 
+}
+
+.help{
+
+  /* position: fixed;
+  left: 19vw;
+  bottom: 25vh; */
+
+  margin-right: 2vw;
+  height: 7.5vh;
+  width: 10vw;
+  font-size: 1.5vw;
+  color: white;
+
+  box-shadow:inset 0px 1px 0px 0px #5eeb84;
+  background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
+  background-color:#73f53f;
+  border-radius:11px;
+  border:6px solid #38a3eb;
+  display:inline-block;
+  cursor:pointer;
+  font-family: 'Poppins', sans-serif;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #0fa814;
+
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  z-index: 2001;
+}
+
+.instructions{
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  height: 40vh;
+  width: auto;
+  max-width: 40vw;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5vh;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  padding: 1vh 2vw;
+  border-radius: 10px;
+  border-style: ridge;
+  z-index: 3000;
 }
 
 #startQuiz:hover {
