@@ -1,15 +1,20 @@
 <template lang="html">
 
     <div>
+      <!-- Displays Question & Timer -->
         <div id="bigContainer">
             <div id="questionContainer">
                 <h3>{{ selectedQuestion.question }} {{ selectedAnimal.name }} {{selectedQuestion.end}}</h3>
                 <p class="pulse"><span v-if="this.timer > 0">{{ this.timer }}</span> <span v-if="this.timer === 0">X</span></p>
             </div>
         </div>
+
+        <!-- Displays user guess - responsive -->
         <div class="guess">
             <p>{{this.guessAnswer}}</p>
         </div>
+
+        <!-- Slider input -->
         <div class="slidecontainer">
             <label>0</label><br>
             <input type="range" min="0" :max="getMaxValue()" :step="(getMaxValue()/20)" class="slider" v-model="guessAnswer" value="1" required><br>
@@ -57,6 +62,7 @@ export default {
     },
     methods: {
         findCorrectAnswer(){
+          // e.g answer = cheetah[speed]
             this.correctAnswer = this.selectedAnimal[this.selectedQuestion.value]
         },
         getMaxValue(){
@@ -124,32 +130,34 @@ export default {
 
             let statement = ""
 
+            // Bonus Score
             let bonus = (Math.round(this.timer / 3));
 
+            // Conditional logic depending on answer accuracy
             if(this.guessAnswer == this.correctAnswer){
+              // updates score back to app.js
                 eventBus.$emit('right-answer', (10 + bonus))
+                // sets answer feedback statement
                 statement = `FANTASTIC, you got it right! The answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. Your gained a total +${10 + bonus} points!`
                 this.playSound('http://soundbible.com/mp3/Roaring%20Lion-SoundBible.com-527774719.mp3')
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
                 eventBus.$emit('right-answer', (8 + bonus))
                 statement = `So close! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You were awarded +${8 + bonus}points!`
                 this.playSound('http://soundbible.com/mp3/Elephant%20Trumpeting-SoundBible.com-1343370148.mp3')
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
                 eventBus.$emit('right-answer', (5 + bonus))
                 statement = `Nearly! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You got +${5 + bonus} points!`
-            } else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
                 eventBus.$emit('right-answer', (2 + bonus))
                 statement = `A little off! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You got ${2 + bonus} points!`
-            // } else if (((this.guessAnswer) >= (this.correctAnswer * 0.6)) && ((this.guessAnswer) <= (this.correctAnswer * 1.4))){
-            //     eventBus.$emit('right-answer', (6 + bonus))
-            //     statement = `You were 40% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${6 + bonus}!`
-            // } else if (((this.guessAnswer) >= (this.correctAnswer * 0.5)) && ((this.guessAnswer) <= (this.correctAnswer * 1.5))){
-            //     eventBus.$emit('right-answer', (5 + bonus))
-            //     statement = `You were 50% off! The answer was ${this.correctAnswer}. Your speed gained you ${bonus} points. +${5 + bonus}!`
-            } else{
+            }
+            else{
                 statement = `Unlucky! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}.`
             }
-
+            // toggles from question to answer with feedback to questionPage.js
             eventBus.$emit('display-answer', statement)
         },
 

@@ -1,21 +1,25 @@
 <template lang="html">
 
+
     <div id="questionsPage">
+
+    <!-- Baackground picture of animal -->
         <div v-if="selectedAnimal">
             <img :src="selectedAnimal.photo" alt="PIC" id="animalPicture">
         </div>
 
-        <!-- current player + score -->
-
+        <!-- Top right corner - Q number, score, Player Name -->
         <div id="userScore">
             <img src="../assets/userScore.png" class="rotate linear infinite" width="400" height="400"/>
             <p>Q {{this.questionCounter}} <br> {{user.name}} <br> {{user.score}} pts</p>
         </div>
 
+        <!-- Question display -->
         <div v-if="selectedAnimal && selectedQuestion">
             <questions-display v-if="toggleAnswer == false" :selectedAnimal="selectedAnimal" :selectedQuestion="selectedQuestion" />
         </div>
 
+        <!-- Answer display and next Question button -->
         <div v-if="toggleAnswer" >
             <div id="answerContainer">
                 <div>
@@ -37,7 +41,6 @@
 <script>
 
 import QuestionsDisplay from './QuestionsDisplay.vue';
-// import GameService from '../services/GameService.js';
 import { eventBus } from '../main.js';
 
 
