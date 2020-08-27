@@ -29,8 +29,8 @@
             </div>
 
             <div id="next">
-                <button v-if="questionCounter < 9" class="button" name="button" v-on:click="nextQuestion">Next Question</button>
-                <button v-if="questionCounter >= 9" class="button" name="button" v-on:click="nextQuestion">Finish</button>
+                <button v-if="questionCounter < 10" class="button" name="button" v-on:click="nextQuestion">Next Question</button>
+                <button v-if="questionCounter >= 10" class="button" name="button" v-on:click="nextQuestion">Finish</button>
             </div>
         </div>
 
