@@ -1,7 +1,7 @@
-# Slideee
+# AnimalQuiz
 
 ### About
-Slidee is an educational app aimed at children in primary school. It allows users to compete with others, by answering 10 questions, based on numerical facts on animals. Points are awarded on accuracy and time elapsed. Questions are randomly generated from a custom built API.
+AnimalQuiz is an educational app aimed at children in primary school. It allows users to compete with others, by answering 10 questions, based on numerical facts on animals. Points are awarded on accuracy and time elapsed. Questions are randomly generated from a custom built API.
 
 ### Setup
 ##### Client
