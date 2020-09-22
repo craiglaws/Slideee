@@ -37,12 +37,14 @@ import {eventBus} from '../main.js'
 export default {
   name: 'end-page',
   props: ["user"],
-  mounted(){
-    console.log(this.user);
-    GameService.sendScore(this.user)
 
+  mounted(){
+    // Posts user score to database
+    GameService.sendScore(this.user)
+    // Gets top 3 scores
     this.getLeaderboard()
   },
+
   methods: {
     getLeaderboard(){
       GameService.getTopThree()
@@ -52,6 +54,7 @@ export default {
       eventBus.$emit('new-game')
     }
   },
+
   data(){
     return{
       topThree: []

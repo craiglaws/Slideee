@@ -2,20 +2,17 @@
     <div id="startPage">
 
         <div id="topBar">
-            <p id="topBarText"> Get learning - AnimalQuiz &trade; </p>
+            <p id="topBarText"> Get learning - Slideee &trade; </p>
         </div>
 
         <h1 id="mainHeader">
-            <span class="red">A</span>
-            <span class="green">n</span>
+            <span class="red">S</span>
+            <span class="green">l</span>
             <span class="blue">i</span>
-            <span class="yellow">m</span>
-            <span class="red">a</span>
-            <span class="green">l </span>
-            <span class="blue">Q</span>
-            <span class="yellow">u</span>
-            <span class="red">i</span>
-            <span class="green">z</span>
+            <span class="yellow">d</span>
+            <span class="red">e</span>
+            <span class="green">e</span>
+            <span class="blue">e</span>
         </h1>
 
         <div class="Iam">
@@ -78,6 +75,7 @@ export default {
         this.playSound()
     },
     methods: {
+
         startQuiz(){
             const newUser = {
                 name: this.username,
@@ -86,6 +84,7 @@ export default {
             GameService.postUser(newUser)
             .then(res => eventBus.$emit('start-quiz', res))
         },
+
         playSound(){
             const introAudio = new Audio('http://soundbible.com/mp3/Light%20Rain%20And%20Crickets-SoundBible.com-1664737469.mp3')
             introAudio.play()

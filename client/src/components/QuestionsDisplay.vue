@@ -155,10 +155,111 @@ export default {
 
       eventBus.$emit('display-answer', statement)
     },
+    methods: {
+        findCorrectAnswer(){
+          // e.g answer = cheetah[speed]
+            this.correctAnswer = this.selectedAnimal[this.selectedQuestion.value]
+        },
+        getMaxValue(){
+            // let max_value = (this.correctAnswer * (1.3 + (Math.random() * 0.3)))
+            let max_value = this.correctAnswer
+            if (max_value < 20) {
+                max_value = 20;
 
-    playSound(sound){
-      const answerSound = new Audio(sound)
-      answerSound.play()
+            } else if (max_value >= 20 && max_value < 50) {
+                max_value = 50;
+
+            } else if (max_value >= 50 && max_value < 100) {
+                max_value = 100;
+
+            } else if (max_value >= 100 && max_value < 200) {
+                max_value = 200;
+
+            } else if (max_value >= 200 && max_value < 500) {
+                max_value = 500;
+
+            } else if (max_value >= 500 && max_value < 1000) {
+                max_value = 1000;
+
+            } else if (max_value >= 1000 && max_value < 2000) {
+                max_value = 2000;
+
+            } else if (max_value >= 2000 && max_value < 5000) {
+                max_value = 5000;
+
+            } else if (max_value >= 5000 && max_value < 10000) {
+                max_value = 10000;
+
+            } else if (max_value >= 10000 && max_value < 20000) {
+                max_value = 20000;
+
+            } else if (max_value >= 20000 && max_value < 50000) {
+                max_value = 50000;
+
+            } else if (max_value >= 50000 && max_value < 100000) {
+                max_value = 100000;
+
+            } else if (max_value >= 100000 && max_value < 200000) {
+                max_value = 200000;
+
+            } else if (max_value >= 200000 && max_value < 500000) {
+                max_value = 500000;
+
+            } else if (max_value >= 500000 && max_value < 1000000) {
+                max_value = 1000000;
+
+            } else if (max_value >= 1000000 && max_value < 2000000) {
+                max_value = 2000000;
+
+            } else if (max_value >= 2000000 && max_value < 5000000) {
+                max_value = 5000000;
+
+            } else if (max_value >= 500000 && max_value < 10000000) {
+                max_value = 10000000;
+            }
+
+            return max_value
+        },
+
+        checkAnswer(){
+
+            let statement = ""
+
+            // Bonus Score
+            let bonus = (Math.round(this.timer / 3));
+
+            // Conditional logic depending on answer accuracy
+            if(this.guessAnswer == this.correctAnswer){
+              // updates score back to app.js
+                eventBus.$emit('right-answer', (10 + bonus))
+                // sets answer feedback statement
+                statement = `FANTASTIC, you got it right! The answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. Your gained a total +${10 + bonus} points!`
+                this.playSound('http://soundbible.com/mp3/Roaring%20Lion-SoundBible.com-527774719.mp3')
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.9)) && ((this.guessAnswer) <= (this.correctAnswer * 1.1))){
+                eventBus.$emit('right-answer', (8 + bonus))
+                statement = `So close! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You were awarded +${8 + bonus}points!`
+                this.playSound('http://soundbible.com/mp3/Elephant%20Trumpeting-SoundBible.com-1343370148.mp3')
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.8)) && ((this.guessAnswer) <= (this.correctAnswer * 1.2))){
+                eventBus.$emit('right-answer', (5 + bonus))
+                statement = `Nearly! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You got +${5 + bonus} points!`
+            }
+            else if (((this.guessAnswer) >= (this.correctAnswer * 0.7)) && ((this.guessAnswer) <= (this.correctAnswer * 1.3))){
+                eventBus.$emit('right-answer', (2 + bonus))
+                statement = `A little off! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}. You got ${2 + bonus} points!`
+            }
+            else{
+                statement = `Unlucky! The correct answer was ${this.correctAnswer} ${this.selectedQuestion.unit}.`
+            }
+            // toggles from question to answer with feedback to questionPage.js
+            eventBus.$emit('display-answer', statement)
+        },
+
+        playSound(sound){
+            const answerSound = new Audio(sound)
+            answerSound.play()
+        }
     }
   }
 }
