@@ -11,7 +11,7 @@
           <span class="blue">l</span>
           <span class="yellow">d</span>
           <span class="red">S</span>
-          <span class="green">l </span>
+          <span class="green">l</span>
           <span class="blue">i</span>
           <span class="yellow">d</span>
           <span class="red">e</span>
@@ -142,7 +142,7 @@ export default {
     z-index: 100;
     font-family: 'Poppins', sans-serif;
     /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
-    -webkit-text-stroke: 5px white;
+    -webkit-text-stroke: 3px white;
 }
 
 #catchphrase {
