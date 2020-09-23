@@ -30,12 +30,13 @@
 
 
 
-        <div v-if="toggleHelp" class="instructions">
+        <div v-if="toggleHelp" class="instructions" v-on:click="openHelp">
           <p>HOW TO PLAY:</p>
           <p>Click and drag the slider thumb to choose value.</p>
           <p>Click Submit</p>
           <p>Points are rewarded for accuracy and time</p>
           <p>Good Luck!!!</p>
+          <p>Click to Close</p>
 
         </div>
 
@@ -266,11 +267,19 @@ export default {
   font-family: 'Poppins', sans-serif;
   font-size: 2.5vh;
 
-  background: rgba(255, 255, 255, 0.5);
+  box-shadow:inset 0px 1px 0px 0px #5eeb84;
+  background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
+  background-color:#73f53f;
+  border-radius:11px;
+  border:6px solid #38a3eb;
+  display:inline-block;
+  cursor:pointer;
+  font-family: 'Poppins', sans-serif;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #0fa814;
 
-  padding: 1vh 2vw;
-  border-radius: 10px;
-  border-style: ridge;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
   z-index: 3000;
 }
 

@@ -5,7 +5,7 @@
     <p>Well done <br>
       {{user.name}}
       <br>
-    You scored {{user.score}}</p>
+    You scored {{user.score}}!</p>
     </div>
 
     <div class="leaderboard">
