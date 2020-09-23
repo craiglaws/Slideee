@@ -2,17 +2,20 @@
     <div id="startPage">
 
         <div id="topBar">
-            <p id="topBarText"> Get learning - Slideee &trade; </p>
+            <p id="topBarText"> Get learning - take a Walk on the Wild Slide &trade; </p>
         </div>
 
         <h1 id="mainHeader">
-            <span class="red">S</span>
-            <span class="green">l</span>
-            <span class="blue">i</span>
-            <span class="yellow">d</span>
-            <span class="red">e</span>
-            <span class="green">e</span>
-            <span class="blue">e</span>
+          <span class="red">W</span>
+          <span class="green">i</span>
+          <span class="blue">l</span>
+          <span class="yellow">d</span>
+          <span class="red">S</span>
+          <span class="green">l </span>
+          <span class="blue">i</span>
+          <span class="yellow">d</span>
+          <span class="red">e</span>
+          <span class="green">!</span>
         </h1>
 
         <div class="Iam">
@@ -27,13 +30,12 @@
 
 
 
-        <div v-if="toggleHelp" class="instructions" v-on:click="openHelp">
+        <div v-if="toggleHelp" class="instructions">
           <p>HOW TO PLAY:</p>
           <p>Click and drag the slider thumb to choose value.</p>
           <p>Click Submit</p>
           <p>Points are rewarded for accuracy and time</p>
           <p>Good Luck!!!</p>
-          <!-- <button class="help padding" v-on:click="openHelp"  name="close">X</button> -->
 
         </div>
 
@@ -260,22 +262,15 @@ export default {
   height: 40vh;
   width: auto;
   max-width: 40vw;
-  color: white;
-  font-size: 2.88vh;
-
-  box-shadow:inset 0px 1px 0px 0px #5eeb84;
-  background:linear-gradient(to bottom, #73f53f 5%, #11f06a 100%);
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius:11px;
-  border:6px solid #38a3eb;
-  display:inline-block;
-  cursor:pointer;
+  color: black;
   font-family: 'Poppins', sans-serif;
-  padding:6px 10px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #0fa814;
+  font-size: 2.5vh;
 
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  background: rgba(255, 255, 255, 0.5);
+
+  padding: 1vh 2vw;
+  border-radius: 10px;
+  border-style: ridge;
   z-index: 3000;
 }
 
