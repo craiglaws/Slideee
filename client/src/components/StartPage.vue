@@ -76,7 +76,7 @@ export default {
         }
     },
     mounted(){
-        this.playSound()
+        // this.playSound()
     },
     methods: {
 
